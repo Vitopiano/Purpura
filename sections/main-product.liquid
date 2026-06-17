@@ -41,7 +41,7 @@
     /* PÚRPURA & Co. brand product page */
     .product__breadcrumb {
       font-family: 'Jost', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       letter-spacing: 0.02em;
       color: var(--purpura-accent);
       margin-bottom: 1rem;
@@ -114,10 +114,10 @@
 
     .product__invima-notice {
       font-family: 'Jost', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.04em;
+      font-size: 1.3rem;
+      letter-spacing: 0.03em;
       color: var(--purpura-accent);
-      margin: 0.5rem 0 0;
+      margin: 0.6rem 0 0;
     }
 
     .product__accordion.accordion {
@@ -141,22 +141,28 @@
     }
 
     .product__info-container .icon-with-text {
-      gap: 2rem;
-      padding: 1.5rem 0;
+      --icon-size: 1.6rem;
+      --icon-spacing: 0.5rem;
+      gap: 1rem;
+      padding: 1.1rem 0;
       border-top: 0.05rem solid var(--purpura-border);
       border-bottom: 0.05rem solid var(--purpura-border);
     }
 
     .product__info-container .icon-with-text__item {
-      font-family: 'Jost', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 0.02em;
       color: var(--purpura-text-secondary);
     }
 
-    .product__info-container .icon-with-text .icon-accordion,
-    .product__info-container .icon-with-text svg {
-      color: var(--purpura-accent);
+    .product__info-container .icon-with-text--horizontal .h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      font-weight: 400;
+      text-transform: none;
+      color: var(--purpura-text-secondary);
+    }
+
+    .product__info-container .icon-with-text .svg-wrapper {
       fill: var(--purpura-accent);
     }
   {%- endstyle -%}
