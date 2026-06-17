@@ -12,7 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "title": { "type": "title", "settings": {} },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
         "text_tagline": {
           "type": "text",
           "settings": {
@@ -21,11 +24,32 @@
             "text_style": "subtitle"
           }
         },
-        "rating_rYTLYX": { "type": "rating", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true } },
+        "rating_rYTLYX": {
+          "type": "rating",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
         "icon_with_text_trust": {
           "type": "icon-with-text",
           "settings": {
@@ -40,15 +64,33 @@
         },
         "collapsible_tab_descripcion": {
           "type": "collapsible_tab",
-          "settings": { "heading": "Descripción", "metafield": "product.description", "icon": "none", "content": "", "page": "" }
+          "settings": {
+            "heading": "Descripción",
+            "metafield": "product.description",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
         },
         "collapsible_tab_zAAVzc": {
           "type": "collapsible_tab",
-          "settings": { "heading": "Modo de uso", "metafield": "custom.modo_de_uso", "icon": "none", "content": "", "page": "" }
+          "settings": {
+            "heading": "Modo de uso",
+            "metafield": "custom.modo_de_uso",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
         },
         "collapsible_tab_EgaGny": {
           "type": "collapsible_tab",
-          "settings": { "heading": "Ingredientes", "metafield": "custom.ingredientes", "icon": "none", "content": "", "page": "" }
+          "settings": {
+            "heading": "Ingredientes",
+            "metafield": "custom.ingredientes",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
         },
         "collapsible_tab_envio": {
           "type": "collapsible_tab",
@@ -60,7 +102,12 @@
             "page": ""
           }
         },
-        "share": { "type": "share", "settings": { "share_label": "Compartir" } }
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Compartir"
+          }
+        }
       },
       "block_order": [
         "title",
@@ -81,10 +128,10 @@
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "bestseller_collection": "",
-        "media_size": "large",
+        "media_size": "small",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
-        "gallery_layout": "stacked",
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "none",
@@ -113,5 +160,8 @@
       }
     }
   },
-  "order": ["main", "related-products"]
+  "order": [
+    "main",
+    "related-products"
+  ]
 }
