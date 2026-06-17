@@ -52,7 +52,7 @@
         "image": "shopify://shop_images/Banners_Web_Purpura_Co_1.png",
         "image_overlay_opacity": 0,
         "image_height": "large",
-        "image_behavior": "zoom-in",
+        "image_behavior": "fixed",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
         "show_text_box": true,
