@@ -29,6 +29,10 @@
     assign card_color_scheme = settings.collection_card_color_scheme
     assign card_style = settings.collection_card_style
   endif
+
+  if card_collection.featured_image == nil and card_collection.handle == 'linea-mystic'
+    assign card_color_scheme = 'scheme-3'
+  endif
 -%}
 
 <div class="card-wrapper animate-arrow {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% else %}collection-card-wrapper{% endif %}">

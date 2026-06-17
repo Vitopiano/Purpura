@@ -1,0 +1,404 @@
+{%- style -%}
+  .newsletter-popup-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    padding: 2rem;
+    background: rgba(44, 44, 44, 0.55);
+    transition: opacity 0.25s ease;
+  }
+
+  .newsletter-popup-modal[open] {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+  }
+
+  .newsletter-popup__dialog {
+    position: relative;
+    width: 100%;
+    max-width: 42rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 1.2rem;
+    border: 0.5px solid #e8ddef;
+    padding: 4rem 3rem 3.5rem;
+    text-align: center;
+  }
+
+  .newsletter-popup__close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #2c2c2c;
+  }
+
+  .newsletter-popup__close .icon {
+    width: 1.6rem;
+  }
+
+  .newsletter-popup__eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6d4580;
+    margin: 0 0 0.8rem;
+  }
+
+  .newsletter-popup__heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #2c2c2c;
+    margin: 0 0 1rem;
+  }
+
+  .newsletter-popup__text {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.4rem;
+    color: #7a7a7a;
+    margin: 0 0 2rem;
+  }
+
+  .newsletter-popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: left;
+  }
+
+  .newsletter-popup__row {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .newsletter-popup__field {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .newsletter-popup__field label {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    color: #2c2c2c;
+  }
+
+  .newsletter-popup__field input {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.4rem;
+    padding: 1rem 1.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid #e8ddef;
+    background: #ffffff;
+    color: #2c2c2c;
+  }
+
+  .newsletter-popup__field input:focus {
+    outline: none;
+    border-color: #6d4580;
+  }
+
+  .newsletter-popup-form .newsletter-popup__submit {
+    background: #6d4580;
+    color: #ffffff;
+    border: none;
+    border-radius: 30px;
+    padding: 1.2rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+
+  .newsletter-popup__error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.2rem;
+    color: #b3261e;
+  }
+
+  .newsletter-popup__error .icon {
+    width: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .newsletter-popup__success-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .newsletter-popup__code {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    letter-spacing: 0.1em;
+    color: #6d4580;
+    border: 1px dashed #6d4580;
+    border-radius: 0.8rem;
+    padding: 1rem 1.5rem;
+    margin: 0 0 1.5rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .newsletter-popup__dialog {
+      padding: 3.5rem 2rem 3rem;
+    }
+
+    .newsletter-popup__row {
+      flex-direction: column;
+    }
+
+    .newsletter-popup__heading {
+      font-size: 2.4rem;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign popup_form_id = 'NewsletterPopupForm-' | append: section.id
+-%}
+
+{%- capture popup_form_html -%}
+  {%- form 'customer', id: popup_form_id, class: 'newsletter-popup-form' -%}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    {%- if form.posted_successfully? -%}
+      <div class="newsletter-popup__success" tabindex="-1" autofocus>
+        <p class="newsletter-popup__success-icon">
+          <span class="svg-wrapper">{{- 'icon-success.svg' | inline_asset_content -}}</span>
+        </p>
+        <h2 class="newsletter-popup__heading">{{ section.settings.success_heading | escape }}</h2>
+        <p class="newsletter-popup__text">{{ section.settings.success_text | escape }}</p>
+        <p class="newsletter-popup__code">{{ section.settings.discount_code | escape }}</p>
+      </div>
+    {%- else -%}
+      <div class="newsletter-popup__row">
+        <div class="newsletter-popup__field">
+          <label for="NewsletterPopupFirstName-{{ section.id }}">Nombre</label>
+          <input
+            id="NewsletterPopupFirstName-{{ section.id }}"
+            type="text"
+            name="contact[first_name]"
+            value="{{ form.first_name }}"
+            autocomplete="given-name"
+            required
+          >
+        </div>
+        <div class="newsletter-popup__field">
+          <label for="NewsletterPopupLastName-{{ section.id }}">Apellido</label>
+          <input
+            id="NewsletterPopupLastName-{{ section.id }}"
+            type="text"
+            name="contact[last_name]"
+            value="{{ form.last_name }}"
+            autocomplete="family-name"
+            required
+          >
+        </div>
+      </div>
+      <div class="newsletter-popup__field">
+        <label for="NewsletterPopupEmail-{{ section.id }}">Correo electrónico</label>
+        <input
+          id="NewsletterPopupEmail-{{ section.id }}"
+          type="email"
+          name="contact[email]"
+          value="{{ form.email }}"
+          autocorrect="off"
+          autocapitalize="off"
+          autocomplete="email"
+          {% if form.errors %}
+            autofocus
+            aria-invalid="true"
+            aria-describedby="NewsletterPopupError-{{ section.id }}"
+          {% endif %}
+          required
+        >
+      </div>
+      {%- if form.errors -%}
+        <p class="newsletter-popup__error" id="NewsletterPopupError-{{ section.id }}">
+          <span class="svg-wrapper">{{- 'icon-error.svg' | inline_asset_content -}}</span>
+          {{- form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email -}}
+        </p>
+      {%- endif -%}
+      <button type="submit" class="newsletter-popup__submit">
+        {{ section.settings.button_label | escape }}
+      </button>
+    {%- endif -%}
+  {%- endform -%}
+{%- endcapture -%}
+
+{%- liquid
+  assign popup_success = false
+  if popup_form_html contains 'newsletter-popup__success'
+    assign popup_success = true
+  endif
+
+  assign popup_reopen = false
+  if popup_success or popup_form_html contains 'newsletter-popup__error'
+    assign popup_reopen = true
+  endif
+-%}
+
+<modal-dialog
+  id="NewsletterPopupModal-{{ section.id }}"
+  class="newsletter-popup-modal"
+  data-delay="{{ section.settings.delay_seconds }}"
+  {% if popup_reopen %}
+    open
+  {% endif %}
+>
+  <div
+    role="dialog"
+    aria-modal="true"
+    aria-label="{{ section.settings.heading | escape }}"
+    class="newsletter-popup__dialog color-{{ section.settings.color_scheme }} gradient"
+    tabindex="-1"
+  >
+    <button
+      id="ModalClose-{{ section.id }}"
+      type="button"
+      class="newsletter-popup__close"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      <span class="svg-wrapper">{{- 'icon-close.svg' | inline_asset_content -}}</span>
+    </button>
+    {%- unless popup_success -%}
+      <p class="newsletter-popup__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h2 class="newsletter-popup__heading">{{ section.settings.heading | escape }}</h2>
+      <p class="newsletter-popup__text">{{ section.settings.text | escape }}</p>
+    {%- endunless -%}
+    {{ popup_form_html }}
+  </div>
+</modal-dialog>
+
+{% javascript %}
+(function () {
+  function initNewsletterPopup(modal) {
+    if (!modal || modal.dataset.popupInitialized) return;
+    modal.dataset.popupInitialized = 'true';
+
+    var storageKey = 'purpura-newsletter-popup-dismissed';
+
+    function markDismissed() {
+      try {
+        window.localStorage.setItem(storageKey, '1');
+      } catch (e) {}
+    }
+
+    function isDismissed() {
+      try {
+        return !!window.localStorage.getItem(storageKey);
+      } catch (e) {
+        return false;
+      }
+    }
+
+    if (modal.hasAttribute('open')) {
+      markDismissed();
+    } else if (!isDismissed()) {
+      var delay = parseInt(modal.dataset.delay, 10);
+      if (isNaN(delay)) delay = 5;
+      window.setTimeout(function () {
+        if (typeof modal.show === 'function') modal.show();
+      }, delay * 1000);
+    }
+
+    new MutationObserver(function () {
+      if (!modal.hasAttribute('open')) markDismissed();
+    }).observe(modal, { attributes: true, attributeFilter: ['open'] });
+  }
+
+  document.querySelectorAll('.newsletter-popup-modal').forEach(initNewsletterPopup);
+})();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Popup de descuento",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Crea primero el código de descuento en Shopify Admin > Descuentos, y escribe ese mismo código abajo para que se muestre al suscribirse."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "delay_seconds",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "s",
+      "label": "Segundos antes de mostrarse",
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto pequeño superior",
+      "default": "Únete y obtén"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "10% de descuento en tu primera compra"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Texto",
+      "default": "Suscríbete con tu nombre y correo y recibe tu código de descuento al instante."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Obtener mi descuento"
+    },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "Código de descuento a mostrar",
+      "default": "BIENVENIDA10"
+    },
+    {
+      "type": "text",
+      "id": "success_heading",
+      "label": "Título de agradecimiento",
+      "default": "¡Gracias por unirte!"
+    },
+    {
+      "type": "text",
+      "id": "success_text",
+      "label": "Texto de agradecimiento",
+      "default": "Usa este código en tu próxima compra:"
+    }
+  ]
+}
+{% endschema %}

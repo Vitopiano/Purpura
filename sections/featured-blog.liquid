@@ -15,6 +15,34 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  /* PÚRPURA & Co. brand blog — horizontal card when showing a single article */
+  @media screen and (min-width: 750px) {
+    .blog--horizontal .card.article-card {
+      flex-direction: row;
+      align-items: stretch;
+      --text-alignment: left;
+    }
+
+    .blog--horizontal .card.article-card .card__inner {
+      width: 42%;
+      flex-shrink: 0;
+    }
+
+    .blog--horizontal .card.article-card .card__inner .card__media {
+      border-radius: 1.2rem 0 0 1.2rem;
+    }
+
+    .blog--horizontal .card.article-card > .card__content {
+      flex: 1 1 auto;
+      text-align: left;
+    }
+
+    .blog--horizontal .card-information,
+    .blog--horizontal .card-information > * {
+      text-align: left;
+    }
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -24,7 +52,7 @@
     assign posts_displayed = section.settings.post_limit
   endif
 -%}
-<div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}">
+<div class="blog color-{{ section.settings.color_scheme }} gradient{% if section.settings.heading == blank %} no-heading{% endif %}{% if section.settings.columns_desktop == 1 %} blog--horizontal{% endif %}">
   <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
     {%- unless section.settings.heading == blank -%}
       <div class="title-wrapper-with-link{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
