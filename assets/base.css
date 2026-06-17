@@ -3606,6 +3606,7 @@ details-disclosure > details {
   --purpura-secondary: #db8aff;
   --purpura-text: #2c2c2c;
   --purpura-text-secondary: #7a7a7a;
+  --purpura-accent: #9b72aa;
   --purpura-border: #e8ddef;
 
   --font-heading-family: 'Cormorant Garamond', serif;
@@ -3627,6 +3628,9 @@ details-disclosure > details {
   --blog-card-corner-radius: 1.2rem;
   --blog-card-shadow-opacity: 0;
   --media-shadow-opacity: 0;
+  --media-radius: 1.6rem;
+  --variant-pills-radius: 2.4rem;
+  --variant-pills-border-width: 0.05rem;
   --popup-shadow-opacity: 0;
   --drawer-shadow-opacity: 0;
   --text-boxes-shadow-opacity: 0;
