@@ -14,53 +14,53 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "brand_information_MTeHw6": {
+        "brand_information_VEnH6C": {
           "type": "brand_information",
           "settings": {
-            "show_social": false
+            "show_social": true
           }
         },
         "text_tienda": {
           "type": "text",
           "settings": {
-            "heading": "Tienda",
-            "subtext": "<p><a href=\"/collections/aromaterapia\">Plantas</a> <a href=\"/collections/cosmetica-belleza\">Cosmética </a><a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/hogar\">Hogar </a><a href=\"/collections/kits\">Kits & regalos</a></p>"
+            "heading": "",
+            "subtext": "<p>TIENDA</p><p><a href=\"/collections/aromaterapia\">Plantas</a> <a href=\"/collections/cosmetica-belleza\">Cosmética </a><a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/hogar\">Hogar </a><a href=\"/collections/kits\">Kits & regalos</a></p>"
           }
         },
         "text_marca": {
           "type": "text",
           "settings": {
-            "heading": "Marca",
-            "subtext": "<p><a href=\"/pages/nuestra-historia\">Nuestra historia</a> <a href=\"/pages/nuestra-lavanda\">Nuestra lavanda </a><a href=\"/blogs/news\">Blog </a><a href=\"/pages/corporativo\">Corporativo</a></p>"
+            "heading": "",
+            "subtext": "<p>MARCA</p><p><a href=\"/pages/nuestra-historia\">Nuestra historia</a> <a href=\"/pages/nuestra-lavanda\">Nuestra lavanda </a><a href=\"/blogs/news\">Blog </a><a href=\"/pages/corporativo\">Corporativo</a></p>"
           }
         },
         "text_contacto": {
           "type": "text",
           "settings": {
-            "heading": "Contacto",
-            "subtext": "<p><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"tel:+573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico </a><a href=\"https://www.purpuraco.com\">www.purpuraco.com</a></p>"
+            "heading": "",
+            "subtext": "<p>CONTACTO<br/><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"tel:+573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico </a><a href=\"https://www.purpuraco.com\">www.purpuraco.com</a></p>"
           }
         }
       },
       "block_order": [
-        "brand_information_MTeHw6",
+        "brand_information_VEnH6C",
         "text_tienda",
         "text_marca",
         "text_contacto"
       ],
       "settings": {
         "color_scheme": "scheme-lilac-cream",
-        "newsletter_enable": false,
-        "newsletter_heading": "Suscríbete",
+        "newsletter_enable": true,
+        "newsletter_heading": "¡Obtén un descuento del 10% en tu primera compra y conoce las nuevas colecciones y las ofertas exclusivas antes que nadie.",
         "enable_follow_on_shop": false,
-        "show_social": true,
+        "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": true,
         "payment_enable": false,
         "show_policy": true,
-        "margin_top": 24,
-        "padding_top": 24,
-        "padding_bottom": 24
+        "margin_top": 32,
+        "padding_top": 36,
+        "padding_bottom": 12
       }
     }
   },

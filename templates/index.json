@@ -11,36 +11,101 @@
   "sections": {
     "178059763443a3d166": {
       "type": "_blocks",
+      "settings": {}
+    },
+    "image_banner_W6ALwA": {
+      "type": "image-banner",
       "blocks": {
-        "ai_gen_block_42e000e_TCgc8G": {
-          "type": "ai_gen_block_42e000e",
+        "heading_bWkcxq": {
+          "type": "heading",
           "settings": {
-            "image_1": "shopify://shop_images/Banners_Web_Purpura_Co_1.png",
-            "image_2": "shopify://shop_images/gentle-purple-flower.jpg",
-            "image_4": "shopify://shop_images/lavender-bundle-on-a-pink-table.jpg",
-            "slide_height": 400,
-            "mobile_slide_height": 300,
-            "desktop_width_percent": 100,
-            "border_radius": 10,
-            "transition_speed": 1.5,
-            "autoplay": true,
-            "autoplay_speed": 7,
-            "show_dots": true,
-            "dot_size": 10,
-            "dot_color": "#a77bca",
-            "show_arrows": true,
-            "arrow_size": 30,
-            "arrow_bg_color": "#a77bca",
-            "arrow_hover_bg_color": "#5e3653",
-            "arrow_color": "#fdfbf7"
-          },
-          "blocks": {}
+            "heading": "La magia de la lavanda, convertida en ritual",
+            "heading_size": "h1"
+          }
+        },
+        "text_ybCtRG": {
+          "type": "text",
+          "settings": {
+            "text": "<a href=\"/blogs/la-lavanda-y-sus-beneficios-todo-lo-que-esta-planta-puede-hacer-por-ti\" title=\"La lavanda y sus beneficios: todo lo que esta planta puede hacer por ti\">Lavanda · Equilibrio · Bienestar</a>",
+            "text_style": "subtitle"
+          }
+        },
+        "buttons_bNVNWb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Conoce los productos",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Conoce la marca",
+            "button_link_2": "shopify://pages/quienes-somos",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
-        "ai_gen_block_42e000e_TCgc8G"
+        "heading_bWkcxq",
+        "text_ybCtRG",
+        "buttons_bNVNWb"
       ],
-      "settings": {}
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Banners_Web_Purpura_Co_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "image_behavior": "fixed",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "brand_values_bRNdMA": {
+      "type": "brand-values",
+      "blocks": {
+        "value_8FfBC3": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-heart.svg",
+            "text": "Libre de parabenos"
+          }
+        },
+        "value_ciqkCY": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-map-pin.svg",
+            "text": "Producto colombiano"
+          }
+        },
+        "value_VYNENR": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-plant.svg",
+            "text": "Inspirado en la naturaleza"
+          }
+        },
+        "value_RhgEEY": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-checkmark.svg",
+            "text": "Dermatológicamente aprobado"
+          }
+        }
+      },
+      "block_order": [
+        "value_8FfBC3",
+        "value_ciqkCY",
+        "value_VYNENR",
+        "value_RhgEEY"
+      ],
+      "name": "Valores de marca",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     },
     "collection_list_JWPVWd": {
       "type": "collection-list",
@@ -99,9 +164,9 @@
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 0
       }
     },
     "image-with-text": {
@@ -136,56 +201,67 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_color_scheme": "scheme-1",
+        "section_color_scheme": "scheme-4",
         "color_scheme": "scheme-lilac-cream",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
-    "newsletter_pkfKwm": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_EbxVPz": {
-          "type": "heading",
-          "settings": {
-            "heading": "Suscríbete",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_JHGTCN": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>¡Obtén un descuento del 10% en tu primera compra y conoce las nuevas colecciones y las ofertas exclusivas antes que nadie.</p>"
-          }
-        },
-        "email_form_tgW7Jy": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_EbxVPz",
-        "paragraph_JHGTCN",
-        "email_form_tgW7Jy"
-      ],
-      "name": "t:sections.newsletter.presets.name",
+    "featured_blog_aqVGjQ": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
       "settings": {
+        "blog": "la-lavanda-y-sus-beneficios-todo-lo-que-esta-planta-puede-hacer-por-ti",
+        "post_limit": 2,
+        "heading": "",
+        "heading_size": "h2",
+        "columns_desktop": 1,
+        "show_view_all": false,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
         "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 32
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "1780597593a3c2db88": {
-      "type": "_blocks",
-      "settings": {}
+    "featured_collection_Gdnt7T": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "kits",
+        "products_to_show": 4,
+        "title": "El regalo perfecto siempre tiene lavanda",
+        "heading_size": "h2",
+        "description": "<p>Kits elegantes, listos para regalar en cualquier ocasión especial</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "color_scheme": "scheme-lilac",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 4
+      }
     }
   },
   "order": [
     "178059763443a3d166",
+    "image_banner_W6ALwA",
+    "brand_values_bRNdMA",
     "collection_list_JWPVWd",
     "image-with-text",
-    "newsletter_pkfKwm",
-    "1780597593a3c2db88"
+    "featured_blog_aqVGjQ",
+    "featured_collection_Gdnt7T"
   ]
 }
