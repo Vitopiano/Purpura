@@ -16,14 +16,103 @@
   }
 {%- endstyle -%}
 
-{%- paginate blog.articles by 6 -%}
+{%- if section.settings.show_hero -%}
+  <div class="blog-hero">
+    {%- if section.settings.hero_label != blank -%}
+      <p class="blog-hero__label">{{ section.settings.hero_label | escape }}</p>
+    {%- endif -%}
+    <h1 class="blog-hero__title">{{ blog.title | escape }}</h1>
+    {%- if section.settings.hero_description != blank -%}
+      <div class="blog-hero__description rte">{{ section.settings.hero_description }}</div>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+{%- if section.settings.show_topics and blog.all_tags.size > 0 -%}
+  <nav class="blog-topics" aria-label="{{ 'blogs.article.tags' | t }}">
+    <a href="{{ blog.url }}" class="blog-topics__pill{% if current_tags == empty %} is-active{% endif %}">
+      Todos
+    </a>
+    {%- for tag in blog.all_tags -%}
+      <a
+        href="{{ blog.url }}/tagged/{{ tag | handle }}"
+        class="blog-topics__pill{% if current_tags contains tag %} is-active{% endif %}"
+      >
+        {{ tag }}
+      </a>
+    {%- endfor -%}
+  </nav>
+{%- endif -%}
+
+{%- paginate blog.articles by 7 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
-    <h1 class="title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
-    </h1>
+    {%- liquid
+      assign show_featured = false
+      assign grid_offset = 0
+      if section.settings.show_featured and paginate.current_page == 1 and blog.articles.size > 0
+        assign show_featured = true
+        assign grid_offset = 1
+        assign featured_article = blog.articles.first
+      endif
+    -%}
+
+    {%- if show_featured -%}
+      {%- liquid
+        assign reading_minutes = featured_article.content | strip_html | split: ' ' | size | divided_by: 200 | at_least: 1
+      -%}
+      <a href="{{ featured_article.url }}" class="blog-featured">
+        <div class="blog-featured__media">
+          {%- if featured_article.image -%}
+            <img
+              srcset="
+                {%- if featured_article.image.width >= 533 -%}{{ featured_article.image | image_url: width: 533 }} 533w,{%- endif -%}
+                {%- if featured_article.image.width >= 750 -%}{{ featured_article.image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if featured_article.image.width >= 1100 -%}{{ featured_article.image | image_url: width: 1100 }} 1100w,{%- endif -%}
+                {{ featured_article.image | image_url }} {{ featured_article.image.width }}w
+              "
+              src="{{ featured_article.image | image_url: width: 750 }}"
+              alt="{{ featured_article.image.alt | escape }}"
+              loading="eager"
+              width="{{ featured_article.image.width }}"
+              height="{{ featured_article.image.height }}"
+            >
+          {%- endif -%}
+        </div>
+        <div class="blog-featured__body">
+          <span class="blog-featured__badge">Artículo destacado</span>
+          <h2 class="blog-featured__title">{{ featured_article.title | escape }}</h2>
+          <div class="blog-featured__meta">
+            <span>{{ reading_minutes }} min de lectura</span>
+            <span>{{ featured_article.published_at | date: '%B %Y' }}</span>
+            {%- if featured_article.tags.first -%}
+              <span>{{ featured_article.tags.first }}</span>
+            {%- endif -%}
+          </div>
+          <p class="blog-featured__excerpt">
+            {%- if featured_article.excerpt.size > 0 -%}
+              {{ featured_article.excerpt | strip_html | truncatewords: 30 }}
+            {%- else -%}
+              {{ featured_article.content | strip_html | truncatewords: 30 }}
+            {%- endif -%}
+          </p>
+          <span class="blog-featured__link">Leer artículo</span>
+        </div>
+      </a>
+    {%- endif -%}
+
+    {%- if section.settings.grid_label != blank or section.settings.grid_title != blank -%}
+      <div class="blog-grid-heading">
+        {%- if section.settings.grid_label != blank -%}
+          <p class="blog-grid-heading__label">{{ section.settings.grid_label | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.grid_title != blank -%}
+          <h2 class="blog-grid-heading__title">{{ section.settings.grid_title | escape }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
 
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- for article in blog.articles -%}
+      {%- for article in blog.articles offset: grid_offset -%}
         <div
           class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
@@ -57,6 +146,48 @@
   "class": "section",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "show_hero",
+      "default": true,
+      "label": "Mostrar hero del blog"
+    },
+    {
+      "type": "text",
+      "id": "hero_label",
+      "default": "Del campo a tu rutina",
+      "label": "Texto pequeño del hero"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_description",
+      "default": "<p>Descubre los beneficios de la lavanda, consejos de cuidado personal y todo lo que necesitas saber para vivir con más calma, intención y bienestar.</p>",
+      "label": "Descripción del hero"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_topics",
+      "default": true,
+      "label": "Mostrar barra de temas (tags)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured",
+      "default": true,
+      "label": "Mostrar artículo destacado (el más reciente)"
+    },
+    {
+      "type": "text",
+      "id": "grid_label",
+      "default": "Más artículos",
+      "label": "Label del grid"
+    },
+    {
+      "type": "text",
+      "id": "grid_title",
+      "default": "Explora el blog",
+      "label": "Título del grid"
+    },
+    {
       "type": "select",
       "id": "layout",
       "options": [
@@ -69,7 +200,7 @@
           "label": "t:sections.main-blog.settings.layout.options__2.label"
         }
       ],
-      "default": "collage",
+      "default": "grid",
       "label": "t:sections.main-blog.settings.layout.label"
     },
     {
@@ -126,7 +257,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 36
+      "default": 0
     },
     {
       "type": "range",

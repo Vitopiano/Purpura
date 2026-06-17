@@ -1,3 +1,171 @@
+/* PÚRPURA & Co. brand blog listing */
+.blog-hero {
+  background: var(--purpura-bg-secondary);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 0.05rem solid var(--purpura-border);
+}
+
+.blog-hero__label {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--purpura-accent);
+  margin: 0 0 0.6rem;
+}
+
+.blog-hero__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: var(--purpura-text);
+  margin: 0 0 0.8rem;
+}
+
+.blog-hero__description {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.3rem;
+  color: var(--purpura-text-secondary);
+  line-height: 1.7;
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.blog-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  padding: 1.25rem 2rem;
+  border-bottom: 0.05rem solid var(--purpura-border);
+}
+
+.blog-topics__pill {
+  border: 0.05rem solid var(--purpura-border);
+  border-radius: 2.4rem;
+  padding: 0.7rem 1.8rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: var(--purpura-text-secondary);
+  background: #ffffff;
+  text-decoration: none;
+}
+
+.blog-topics__pill.is-active {
+  border: 0.15rem solid var(--purpura-primary);
+  color: var(--purpura-primary);
+  background: var(--purpura-bg-secondary);
+}
+
+.blog-featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 0.05rem solid var(--purpura-border);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  text-decoration: none;
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 750px) {
+  .blog-featured {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.blog-featured__media {
+  background: var(--purpura-bg-secondary);
+  min-height: 22rem;
+}
+
+.blog-featured__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-featured__body {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-featured__badge {
+  display: inline-block;
+  background: var(--purpura-primary);
+  color: #ffffff;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 1.2rem;
+  border-radius: 1.6rem;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.blog-featured__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--purpura-text);
+  margin: 0 0 1rem;
+}
+
+.blog-featured__meta {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.1rem;
+  color: var(--purpura-accent);
+  margin-bottom: 1.25rem;
+}
+
+.blog-featured__excerpt {
+  font-family: 'Jost', sans-serif;
+  font-size: 1.3rem;
+  color: var(--purpura-text-secondary);
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+}
+
+.blog-featured__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--purpura-primary);
+  border-bottom: 0.1rem solid var(--purpura-primary);
+  padding-bottom: 0.2rem;
+  width: fit-content;
+}
+
+.blog-grid-heading__label {
+  font-family: 'Jost', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--purpura-accent);
+  margin: 0 0 0.5rem;
+}
+
+.blog-grid-heading__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--purpura-text);
+  margin: 0 0 1.75rem;
+}
+
 .blog-articles {
   display: grid;
   grid-gap: 1rem;
@@ -44,6 +212,10 @@
 }
 
 @media screen and (min-width: 990px) {
+  .blog-articles:not(.blog-articles--collage) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .blog-articles--collage > *:nth-child(3n + 1) .article-card__image--small .ratio .ratio::before,
   .blog-articles--collage > *:nth-child(3n + 2):last-child .article-card__image--small .ratio .ratio::before {
     padding-bottom: 27.5rem;

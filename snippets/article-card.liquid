@@ -72,6 +72,10 @@
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
             </div>
           </div>
+        {%- elsif show_image == true -%}
+          <div class="article-card__image-wrapper article-card__image-wrapper--placeholder card__media">
+            <div class="article-card__image media"></div>
+          </div>
         {%- endif -%}
         <div class="card__content">
           <div class="card__information">
@@ -114,19 +118,19 @@
       </div>
       <div class="card__content">
         <div class="card__information">
+          {%- if article.tags.first -%}
+            <p class="article-card__tag">{{ article.tags.first }}</p>
+          {%- endif -%}
           <h3 class="card__heading{% if show_excerpt %} h2{% endif %}">
             <a href="{{ article.url }}" class="full-unstyled-link">
               {{ article.title | truncate: 50 | escape }}
             </a>
           </h3>
-          <div class="article-card__info caption-with-letter-spacing h5">
-            {%- if show_date -%}
-              <span class="circle-divider">{{ article.published_at | time_tag: format: 'date' }}</span>
-            {%- endif -%}
-            {%- if show_author -%}
+          {%- if show_author -%}
+            <div class="article-card__info caption-with-letter-spacing h5">
               <span>{{ article.author }}</span>
-            {%- endif -%}
-          </div>
+            </div>
+          {%- endif -%}
           {%- if show_excerpt -%}
             {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
               <p class="article-card__excerpt rte-width">
@@ -138,9 +142,13 @@
               </p>
             {%- endif -%}
             <div class="article-card__footer">
+              {%- if show_date -%}
+                <span class="article-card__date">{{ article.published_at | date: '%B %Y' }}</span>
+              {%- endif -%}
               {%- if article.comments_count > 0 and blog.comments_enabled? -%}
                 <span>{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
               {%- endif -%}
+              <a href="{{ article.url }}" class="article-card__read-link">Leer</a>
             </div>
           {%- endif -%}
         </div>
