@@ -133,8 +133,8 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "center",
-        "section_color_scheme": "scheme-lilac",
-        "color_scheme": "scheme-lilac",
+        "section_color_scheme": "scheme-lilac-cream",
+        "color_scheme": "scheme-lilac-cream",
         "padding_top": 36,
         "padding_bottom": 36
       }
