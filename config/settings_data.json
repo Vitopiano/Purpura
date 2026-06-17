@@ -109,10 +109,10 @@
     "brand_headline": "PÚRPURA&Co.",
     "brand_description": "<p>Lavanda · Equilibrio · Bienestar</p><p><br/>Producto colombiano, libre de parabenos.</p>",
     "brand_image_width": 100,
-    "social_facebook_link": "",
+    "social_facebook_link": "https://www.facebook.com/people/P%C3%BArpura-Co/",
     "social_instagram_link": "https://www.instagram.com/purpuraico/",
     "social_youtube_link": "",
-    "social_tiktok_link": "",
+    "social_tiktok_link": "https://www.tiktok.com/@purpurayco",
     "social_twitter_link": "",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
@@ -224,11 +224,11 @@
         "settings": {
           "background": "#584166",
           "background_gradient": "",
-          "text": "#F0EAF7",
-          "button": "#F0EAF7",
+          "text": "#f0eaf7",
+          "button": "#f0eaf7",
           "button_label": "#ffffff",
-          "secondary_button_label": "#F0EAF7",
-          "shadow": "#F0EAF7"
+          "secondary_button_label": "#f0eaf7",
+          "shadow": "#f0eaf7"
         }
       }
     }
