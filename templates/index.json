@@ -235,40 +235,6 @@
         "padding_top": 12,
         "padding_bottom": 4
       }
-    },
-    "newsletter_pkfKwm": {
-      "type": "newsletter",
-      "blocks": {
-        "heading_EbxVPz": {
-          "type": "heading",
-          "settings": {
-            "heading": "Suscríbete",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph_JHGTCN": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>¡Obtén un descuento del 10% en tu primera compra y conoce las nuevas colecciones y las ofertas exclusivas antes que nadie.</p>"
-          }
-        },
-        "email_form_tgW7Jy": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading_EbxVPz",
-        "paragraph_JHGTCN",
-        "email_form_tgW7Jy"
-      ],
-      "name": "t:sections.newsletter.presets.name",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 0,
-        "padding_bottom": 16
-      }
     }
   },
   "order": [
@@ -277,7 +243,6 @@
     "brand_values_bRNdMA",
     "collection_list_JWPVWd",
     "image-with-text",
-    "featured_collection_Gdnt7T",
-    "newsletter_pkfKwm"
+    "featured_collection_Gdnt7T"
   ]
 }
