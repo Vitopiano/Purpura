@@ -179,10 +179,56 @@
     "1780597593a3c2db88": {
       "type": "_blocks",
       "settings": {}
+    },
+    "brand_values_bRNdMA": {
+      "type": "brand-values",
+      "blocks": {
+        "value_8FfBC3": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-leaf.svg",
+            "text": "Libre de parabenos"
+          }
+        },
+        "value_ciqkCY": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-map-pin.svg",
+            "text": "Producto colombiano"
+          }
+        },
+        "value_VYNENR": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-plant.svg",
+            "text": "Inspirado en la naturaleza"
+          }
+        },
+        "value_RhgEEY": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-checkmark.svg",
+            "text": "Dermatológicamente aprobado"
+          }
+        }
+      },
+      "block_order": [
+        "value_8FfBC3",
+        "value_ciqkCY",
+        "value_VYNENR",
+        "value_RhgEEY"
+      ],
+      "name": "Valores de marca",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
     "178059763443a3d166",
+    "brand_values_bRNdMA",
     "collection_list_JWPVWd",
     "image-with-text",
     "newsletter_pkfKwm",
