@@ -24,21 +24,21 @@
           "type": "text",
           "settings": {
             "heading": "Tienda",
-            "subtext": "<p><a href=\"/collections/aromaterapia\">Plantas</a><br><a href=\"/collections/cosmetica-belleza\">Cosmética</a><br><a href=\"/collections/proteccion-solar\">Protector solar</a><br><a href=\"/collections/hogar\">Hogar</a><br><a href=\"/collections/kits\">Kits</a></p>"
+            "subtext": "<p><a href=\"/collections/aromaterapia\">Plantas</a> <a href=\"/collections/cosmetica-belleza\">Cosmética </a><a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/hogar\">Hogar </a><a href=\"/collections/kits\">Kits</a></p>"
           }
         },
         "text_marca": {
           "type": "text",
           "settings": {
             "heading": "Marca",
-            "subtext": "<p><a href=\"/pages/nuestra-historia\">Nuestra historia</a><br><a href=\"/pages/nuestra-lavanda\">Nuestra lavanda</a><br><a href=\"/blogs/news\">Blog</a><br><a href=\"/pages/corporativo\">Corporativo</a></p>"
+            "subtext": "<p><a href=\"/pages/nuestra-historia\">Nuestra historia</a> <a href=\"/pages/nuestra-lavanda\">Nuestra lavanda </a><a href=\"/blogs/news\">Blog </a><a href=\"/pages/corporativo\">Corporativo</a></p>"
           }
         },
         "text_contacto": {
           "type": "text",
           "settings": {
             "heading": "Contacto",
-            "subtext": "<p><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com</a><br><a href=\"tel:+573118899844\">(311) 889-9844</a><br><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico</a><br><a href=\"https://www.purpuraco.com\">www.purpuraco.com</a></p>"
+            "subtext": "<p><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"tel:+573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico </a><a href=\"https://www.purpuraco.com\">www.purpuraco.com</a></p>"
           }
         }
       },
