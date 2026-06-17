@@ -207,6 +207,35 @@
         "padding_bottom": 12
       }
     },
+    "featured_collection_Gdnt7T": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "collection": "kits",
+        "products_to_show": 4,
+        "title": "El regalo perfecto siempre tiene lavanda",
+        "heading_size": "h2",
+        "description": "<p>Kits elegantes, listos para regalar en cualquier ocasión especial</p>",
+        "show_description": false,
+        "description_style": "subtitle",
+        "columns_desktop": 4,
+        "enable_desktop_slider": true,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "link",
+        "color_scheme": "scheme-lilac",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 4
+      }
+    },
     "newsletter_pkfKwm": {
       "type": "newsletter",
       "blocks": {
@@ -239,35 +268,6 @@
         "full_width": true,
         "padding_top": 0,
         "padding_bottom": 16
-      }
-    },
-    "featured_collection_Gdnt7T": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "collection": "kits",
-        "products_to_show": 4,
-        "title": "El regalo perfecto siempre tiene lavanda",
-        "heading_size": "h2",
-        "description": "<p>Kits elegantes, listos para regalar en cualquier ocasión especial</p>",
-        "show_description": false,
-        "description_style": "subtitle",
-        "columns_desktop": 4,
-        "enable_desktop_slider": true,
-        "full_width": true,
-        "show_view_all": false,
-        "view_all_style": "link",
-        "color_scheme": "scheme-lilac",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     }
   },
