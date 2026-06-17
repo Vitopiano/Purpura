@@ -238,12 +238,8 @@
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 0,
-        "padding_bottom": 32
+        "padding_bottom": 16
       }
-    },
-    "1780597593a3c2db88": {
-      "type": "_blocks",
-      "settings": {}
     }
   },
   "order": [
@@ -252,7 +248,6 @@
     "brand_values_bRNdMA",
     "collection_list_JWPVWd",
     "image-with-text",
-    "newsletter_pkfKwm",
-    "1780597593a3c2db88"
+    "newsletter_pkfKwm"
   ]
 }
