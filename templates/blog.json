@@ -1,15 +1,17 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-blog",
       "settings": {
-        "show_hero": true,
-        "hero_label": "Del campo a tu rutina",
-        "hero_description": "<p>Descubre los beneficios de la lavanda, consejos de cuidado personal y todo lo que necesitas saber para vivir con más calma, intención y bienestar.</p>",
-        "show_topics": true,
-        "show_featured": true,
-        "grid_label": "Más artículos",
-        "grid_title": "Explora el blog",
         "layout": "grid",
         "show_image": true,
         "image_height": "medium",
@@ -20,5 +22,7 @@
       }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main"
+  ]
 }
