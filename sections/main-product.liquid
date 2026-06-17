@@ -37,6 +37,128 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
+
+    /* PÚRPURA & Co. brand product page */
+    .product__breadcrumb {
+      font-family: 'Jost', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      color: var(--purpura-accent);
+      margin-bottom: 1rem;
+    }
+
+    .product__breadcrumb a {
+      color: var(--purpura-accent);
+      text-decoration: none;
+    }
+
+    .product__breadcrumb span {
+      color: var(--purpura-text-secondary);
+    }
+
+    .product__category {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purpura-accent);
+      margin: 0 0 0.4rem;
+    }
+
+    .product__media-wrapper {
+      position: relative;
+    }
+
+    #MainProduct-{{ section.id }} .product-media-container {
+      background-color: var(--purpura-bg-secondary);
+    }
+
+    .product__bestseller-badge {
+      position: absolute;
+      top: 1.6rem;
+      left: 1.6rem;
+      z-index: 3;
+      background: var(--purpura-primary);
+      color: #ffffff;
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+    }
+
+    .thumbnail-list__item .thumbnail {
+      border-radius: 1rem;
+    }
+
+    .thumbnail-list__item button[aria-current='true'] {
+      box-shadow: 0 0 0 0.15rem var(--purpura-primary);
+    }
+
+    #MainProduct-{{ section.id }} .product__title h2.h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 400;
+      color: var(--purpura-text);
+      line-height: 1.15;
+    }
+
+    .product__text.subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--purpura-text-secondary);
+      margin-top: 0;
+    }
+
+    .product__invima-notice {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      color: var(--purpura-accent);
+      margin: 0.5rem 0 0;
+    }
+
+    .product__accordion.accordion {
+      border-color: var(--purpura-border);
+    }
+
+    .product__accordion .accordion__title {
+      font-family: 'Jost', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--purpura-text);
+    }
+
+    .product__accordion .accordion__content {
+      font-family: 'Jost', sans-serif;
+      font-size: 1.3rem;
+      color: var(--purpura-text-secondary);
+      line-height: 1.7;
+    }
+
+    .product__info-container .icon-with-text {
+      gap: 2rem;
+      padding: 1.5rem 0;
+      border-top: 0.05rem solid var(--purpura-border);
+      border-bottom: 0.05rem solid var(--purpura-border);
+    }
+
+    .product__info-container .icon-with-text__item {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: var(--purpura-text-secondary);
+    }
+
+    .product__info-container .icon-with-text .icon-accordion,
+    .product__info-container .icon-with-text svg {
+      color: var(--purpura-accent);
+      fill: var(--purpura-accent);
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -108,16 +230,30 @@
         >
           {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
+          {%- if product.collections.first.title != blank -%}
+            <p class="product__category">{{ product.collections.first.title }}</p>
+          {%- endif -%}
+
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
               {%- when 'text' -%}
+                {%- liquid
+                  assign text_content = block.settings.text
+                  if block.settings.metafield != blank
+                    assign text_metafield_parts = block.settings.metafield | split: '.'
+                    assign text_metafield_value = product.metafields[text_metafield_parts[0]][text_metafield_parts[1]].value
+                    if text_metafield_value != blank
+                      assign text_content = text_metafield_value
+                    endif
+                  endif
+                -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                   {{ block.shopify_attributes }}
                 >
-                  {{- block.settings.text -}}
+                  {{- text_content -}}
                 </p>
               {%- when 'title' -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
@@ -137,6 +273,11 @@
                     price_class: 'price--large'
                   -%}
                 </div>
+                {%- if product.metafields.custom.invima.value != blank -%}
+                  <p class="product__invima-notice">
+                    Invima {{ product.metafields.custom.invima.value }} · Precio con IVA incluido
+                  </p>
+                {%- endif -%}
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -233,6 +374,17 @@
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
+                {%- liquid
+                  assign tab_content = block.settings.content
+                  if block.settings.metafield == 'product.description'
+                    assign tab_content = product.description
+                  elsif block.settings.metafield != blank
+                    assign metafield_parts = block.settings.metafield | split: '.'
+                    assign metafield_namespace = metafield_parts[0]
+                    assign metafield_key = metafield_parts[1]
+                    assign tab_content = product.metafields[metafield_namespace][metafield_key].value
+                  endif
+                -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}">
                     <summary>
@@ -245,7 +397,7 @@
                       {{- 'icon-caret.svg' | inline_asset_content -}}
                     </summary>
                     <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                      {{ block.settings.content }}
+                      {{ tab_content }}
                       {{ block.settings.page.content }}
                     </div>
                   </details>
@@ -781,6 +933,12 @@
           "label": "t:sections.main-product.blocks.text.settings.text.label"
         },
         {
+          "type": "text",
+          "id": "metafield",
+          "label": "Metafield (opcional)",
+          "info": "Ej: custom.tagline. Si el producto tiene ese metafield, se muestra en vez del texto de arriba."
+        },
+        {
           "type": "select",
           "id": "text_style",
           "options": [
@@ -990,6 +1148,12 @@
           "id": "heading",
           "default": "t:sections.main-product.blocks.collapsible_tab.settings.heading.default",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
+        },
+        {
+          "type": "text",
+          "id": "metafield",
+          "label": "Metafield o fuente dinámica",
+          "info": "Opcional. Escribe el namespace.key del metafield (ej: custom.modo_de_uso, custom.ingredientes) o 'product.description' para mostrar la descripción del producto. Si lo dejas vacío, se usa el contenido de abajo."
         },
         {
           "type": "select",
@@ -2123,6 +2287,12 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "collection",
+      "id": "bestseller_collection",
+      "label": "Colección de más vendidos (para el badge)",
+      "info": "El badge \"Más vendido\" aparece si el producto está entre los primeros 12 de esta colección. Usa una colección de Shopify ordenada por \"Más vendidos\" (basada en ventas reales)."
     },
     {
       "type": "header",

@@ -1,1 +1,108 @@
-{"sections":{"main":{"type":"main-product","blocks":{"title":{"type":"title","settings":{}},"price":{"type":"price","settings":{}},"rating_rYTLYX":{"type":"rating","settings":{}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_shape":"circle"}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"description":{"type":"description","settings":{}},"collapsible_tab_zAAVzc":{"type":"collapsible_tab","settings":{"heading":"Modo de uso","icon":"none","content":"<p>{{ block.settings.page.metafields.custom.modo_de_uso | metafield_tag }}<\/p>","page":""}},"collapsible_tab_EgaGny":{"type":"collapsible_tab","settings":{"heading":"Ingredientes","icon":"none","content":"","page":""}},"text_Gwxa74":{"type":"text","settings":{"text":"Invima {{ product.metafields.custom.invima.value }}","text_style":"body"}},"share":{"type":"share","settings":{"share_label":"Compartir"}}},"block_order":["title","price","rating_rYTLYX","variant_picker","quantity_selector","buy_buttons","description","collapsible_tab_zAAVzc","collapsible_tab_EgaGny","text_Gwxa74","share"],"settings":{"enable_sticky_info":true,"color_scheme":"scheme-1","media_size":"medium","constrain_to_viewport":true,"media_fit":"contain","gallery_layout":"stacked","mobile_thumbnails":"hide","media_position":"left","image_zoom":"none","hide_variants":false,"enable_video_looping":false,"padding_top":24,"padding_bottom":24}},"related-products":{"type":"related-products","settings":{"heading":"You may also like","heading_size":"h2","products_to_show":4,"columns_desktop":4,"columns_mobile":"2","color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"padding_top":36,"padding_bottom":68}}},"order":["main","related-products"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": { "type": "title", "settings": {} },
+        "text_tagline": {
+          "type": "text",
+          "settings": {
+            "text": "Firmeza, luminosidad y juventud",
+            "metafield": "",
+            "text_style": "subtitle"
+          }
+        },
+        "rating_rYTLYX": { "type": "rating", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "circle" } },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true } },
+        "icon_with_text_trust": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "truck",
+            "heading_1": "Envío a todo Colombia",
+            "icon_2": "leaf",
+            "heading_2": "Sin parabenos",
+            "icon_3": "check_mark",
+            "heading_3": "Derm. aprobado"
+          }
+        },
+        "collapsible_tab_descripcion": {
+          "type": "collapsible_tab",
+          "settings": { "heading": "Descripción", "metafield": "product.description", "icon": "none", "content": "", "page": "" }
+        },
+        "collapsible_tab_zAAVzc": {
+          "type": "collapsible_tab",
+          "settings": { "heading": "Modo de uso", "metafield": "custom.modo_de_uso", "icon": "none", "content": "", "page": "" }
+        },
+        "collapsible_tab_EgaGny": {
+          "type": "collapsible_tab",
+          "settings": { "heading": "Ingredientes", "metafield": "custom.ingredientes", "icon": "none", "content": "", "page": "" }
+        },
+        "collapsible_tab_envio": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Envío y devoluciones",
+            "metafield": "",
+            "icon": "none",
+            "content": "<p>Envíos a todo Colombia. Despacho en 1-2 días hábiles. El valor del envío no está incluido en el precio del producto.</p>",
+            "page": ""
+          }
+        },
+        "share": { "type": "share", "settings": { "share_label": "Compartir" } }
+      },
+      "block_order": [
+        "title",
+        "text_tagline",
+        "rating_rYTLYX",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "icon_with_text_trust",
+        "collapsible_tab_descripcion",
+        "collapsible_tab_zAAVzc",
+        "collapsible_tab_EgaGny",
+        "collapsible_tab_envio",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "bestseller_collection": "",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "mobile_thumbnails": "hide",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Completa tu rutina",
+        "heading_size": "h1",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-4",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 48,
+        "padding_bottom": 68
+      }
+    }
+  },
+  "order": ["main", "related-products"]
+}
