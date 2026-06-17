@@ -11,36 +11,101 @@
   "sections": {
     "178059763443a3d166": {
       "type": "_blocks",
+      "settings": {}
+    },
+    "image_banner_W6ALwA": {
+      "type": "image-banner",
       "blocks": {
-        "ai_gen_block_42e000e_TCgc8G": {
-          "type": "ai_gen_block_42e000e",
+        "heading_bWkcxq": {
+          "type": "heading",
           "settings": {
-            "image_1": "shopify://shop_images/Banners_Web_Purpura_Co_1.png",
-            "image_2": "shopify://shop_images/gentle-purple-flower.jpg",
-            "image_4": "shopify://shop_images/lavender-bundle-on-a-pink-table.jpg",
-            "slide_height": 400,
-            "mobile_slide_height": 300,
-            "desktop_width_percent": 100,
-            "border_radius": 10,
-            "transition_speed": 1.5,
-            "autoplay": true,
-            "autoplay_speed": 7,
-            "show_dots": true,
-            "dot_size": 10,
-            "dot_color": "#a77bca",
-            "show_arrows": true,
-            "arrow_size": 30,
-            "arrow_bg_color": "#a77bca",
-            "arrow_hover_bg_color": "#5e3653",
-            "arrow_color": "#fdfbf7"
-          },
-          "blocks": {}
+            "heading": "La magia de la lavanda, convertida en ritual",
+            "heading_size": "h1"
+          }
+        },
+        "text_ybCtRG": {
+          "type": "text",
+          "settings": {
+            "text": "Lavanda · Equilibrio · Bienestar",
+            "text_style": "body"
+          }
+        },
+        "buttons_bNVNWb": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Conoce los productos",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "Conoce la marca",
+            "button_link_2": "shopify://pages/quienes-somos",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
-        "ai_gen_block_42e000e_TCgc8G"
+        "heading_bWkcxq",
+        "text_ybCtRG",
+        "buttons_bNVNWb"
       ],
-      "settings": {}
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Banners_Web_Purpura_Co_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "large",
+        "image_behavior": "zoom-in",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-1",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "brand_values_bRNdMA": {
+      "type": "brand-values",
+      "blocks": {
+        "value_8FfBC3": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-leaf.svg",
+            "text": "Libre de parabenos"
+          }
+        },
+        "value_ciqkCY": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-map-pin.svg",
+            "text": "Producto colombiano"
+          }
+        },
+        "value_VYNENR": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-plant.svg",
+            "text": "Inspirado en la naturaleza"
+          }
+        },
+        "value_RhgEEY": {
+          "type": "value",
+          "settings": {
+            "icon": "icon-checkmark.svg",
+            "text": "Dermatológicamente aprobado"
+          }
+        }
+      },
+      "block_order": [
+        "value_8FfBC3",
+        "value_ciqkCY",
+        "value_VYNENR",
+        "value_RhgEEY"
+      ],
+      "name": "Valores de marca",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     },
     "collection_list_JWPVWd": {
       "type": "collection-list",
@@ -179,55 +244,11 @@
     "1780597593a3c2db88": {
       "type": "_blocks",
       "settings": {}
-    },
-    "brand_values_bRNdMA": {
-      "type": "brand-values",
-      "blocks": {
-        "value_8FfBC3": {
-          "type": "value",
-          "settings": {
-            "icon": "icon-leaf.svg",
-            "text": "Libre de parabenos"
-          }
-        },
-        "value_ciqkCY": {
-          "type": "value",
-          "settings": {
-            "icon": "icon-map-pin.svg",
-            "text": "Producto colombiano"
-          }
-        },
-        "value_VYNENR": {
-          "type": "value",
-          "settings": {
-            "icon": "icon-plant.svg",
-            "text": "Inspirado en la naturaleza"
-          }
-        },
-        "value_RhgEEY": {
-          "type": "value",
-          "settings": {
-            "icon": "icon-checkmark.svg",
-            "text": "Dermatológicamente aprobado"
-          }
-        }
-      },
-      "block_order": [
-        "value_8FfBC3",
-        "value_ciqkCY",
-        "value_VYNENR",
-        "value_RhgEEY"
-      ],
-      "name": "Valores de marca",
-      "settings": {
-        "color_scheme": "",
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
     }
   },
   "order": [
     "178059763443a3d166",
+    "image_banner_W6ALwA",
     "brand_values_bRNdMA",
     "collection_list_JWPVWd",
     "image-with-text",
