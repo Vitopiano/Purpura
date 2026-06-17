@@ -16,27 +16,19 @@
           "type": "title",
           "settings": {}
         },
-        "text_tagline": {
-          "type": "text",
-          "settings": {
-            "text": "Firmeza, luminosidad y juventud",
-            "metafield": "",
-            "text_style": "body"
-          }
+        "price": {
+          "type": "price",
+          "settings": {}
         },
         "rating_rYTLYX": {
           "type": "rating",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
           "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "none"
           }
         },
         "quantity_selector": {
@@ -111,9 +103,8 @@
       },
       "block_order": [
         "title",
-        "text_tagline",
-        "rating_rYTLYX",
         "price",
+        "rating_rYTLYX",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
