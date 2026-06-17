@@ -5,11 +5,19 @@
 }
 
 .article-hero {
-  background: #3d1a5e;
   padding: 4rem 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 749px) {
+  .article-hero,
+  .article-breadcrumb,
+  .article-body {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
 }
 
 .article-hero__inner {

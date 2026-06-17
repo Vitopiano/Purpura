@@ -211,6 +211,15 @@
   }
 }
 
+@media screen and (max-width: 749px) {
+  .blog-hero,
+  .blog-topics,
+  .main-blog {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+}
+
 @media screen and (min-width: 990px) {
   .blog-articles:not(.blog-articles--collage) {
     grid-template-columns: 1fr 1fr 1fr;
