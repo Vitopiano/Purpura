@@ -1,1 +1,70 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","blocks":{"brand_information_MTeHw6":{"type":"brand_information","settings":{"show_social":false}},"text_tienda":{"type":"text","settings":{"heading":"Tienda","subtext":"<p><a href=\"\/collections\/aromaterapia\">Plantas<\/a><br><a href=\"\/collections\/cosmetica-belleza\">Cosmética<\/a><br><a href=\"\/collections\/proteccion-solar\">Protector solar<\/a><br><a href=\"\/collections\/hogar\">Hogar<\/a><br><a href=\"\/collections\/kits\">Kits<\/a><\/p>"}},"text_marca":{"type":"text","settings":{"heading":"Marca","subtext":"<p><a href=\"\/pages\/nuestra-historia\">Nuestra historia<\/a><br><a href=\"\/pages\/nuestra-lavanda\">Nuestra lavanda<\/a><br><a href=\"\/blogs\/news\">Blog<\/a><br><a href=\"\/pages\/corporativo\">Corporativo<\/a><\/p>"}},"text_contacto":{"type":"text","settings":{"heading":"Contacto","subtext":"<p><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com<\/a><br><a href=\"tel:+573118899844\">(311) 889-9844<\/a><br><a href=\"https:\/\/www.instagram.com\/purpuraico\/\">@purpuraico<\/a><br><a href=\"https:\/\/www.purpuraco.com\">www.purpuraco.com<\/a><\/p>"}}},"block_order":["brand_information_MTeHw6","text_tienda","text_marca","text_contacto"],"settings":{"color_scheme":"scheme-3","newsletter_enable":false,"newsletter_heading":"Suscríbete","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":16,"padding_bottom":16}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_MTeHw6": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": false
+          }
+        },
+        "text_tienda": {
+          "type": "text",
+          "settings": {
+            "heading": "Tienda",
+            "subtext": "<p><a href=\"/collections/aromaterapia\">Plantas</a> <a href=\"/collections/cosmetica-belleza\">Cosmética </a><a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/hogar\">Hogar </a><a href=\"/collections/kits\">Kits & regalos</a></p>"
+          }
+        },
+        "text_marca": {
+          "type": "text",
+          "settings": {
+            "heading": "Marca",
+            "subtext": "<p><a href=\"/pages/nuestra-historia\">Nuestra historia</a> <a href=\"/pages/nuestra-lavanda\">Nuestra lavanda </a><a href=\"/blogs/news\">Blog </a><a href=\"/pages/corporativo\">Corporativo</a></p>"
+          }
+        },
+        "text_contacto": {
+          "type": "text",
+          "settings": {
+            "heading": "Contacto",
+            "subtext": "<p><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"tel:+573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico </a><a href=\"https://www.purpuraco.com\">www.purpuraco.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_MTeHw6",
+        "text_tienda",
+        "text_marca",
+        "text_contacto"
+      ],
+      "settings": {
+        "color_scheme": "scheme-lilac-cream",
+        "newsletter_enable": false,
+        "newsletter_heading": "Suscríbete",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": true,
+        "payment_enable": false,
+        "show_policy": true,
+        "margin_top": 24,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
