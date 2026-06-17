@@ -593,3 +593,25 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+
+/* PÚRPURA & Co. brand cards */
+.card--card,
+.card--standard .card__inner {
+  border-width: 0.5px;
+  border-color: #e8ddef;
+  border-radius: 1.2rem;
+}
+
+.card--card .card__inner .card__media {
+  border-top-left-radius: 1.2rem;
+  border-top-right-radius: 1.2rem;
+}
+
+.card-information > .price {
+  color: #6d4580;
+}
+
+.card__information .quick-add__submit,
+.quick-add__submit.button--secondary {
+  border-radius: 30px;
+}

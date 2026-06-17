@@ -82,6 +82,31 @@
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  /* PÚRPURA & Co. brand header */
+  .header-wrapper {
+    background: rgba(250, 248, 245, 0.96);
+    border-bottom: 0.5px solid #e8ddef;
+  }
+
+  .header__heading-link .h2,
+  .header__heading-link span.h2 {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+  }
+
+  .header__inline-menu .header__menu-item {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .header__inline-menu .header__menu-item:hover {
+    color: #6d4580;
+  }
+
   @media screen and (min-width: 750px) {
     .section-header {
       margin-bottom: {{ section.settings.margin_bottom }}px;

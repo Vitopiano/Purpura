@@ -3595,3 +3595,66 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* =========================================================
+   PÚRPURA & Co. — brand theme
+   ========================================================= */
+:root {
+  --purpura-bg: #faf8f5;
+  --purpura-bg-secondary: #f0eaf7;
+  --purpura-primary: #6d4580;
+  --purpura-secondary: #db8aff;
+  --purpura-text: #2c2c2c;
+  --purpura-text-secondary: #7a7a7a;
+  --purpura-border: #e8ddef;
+
+  --font-heading-family: 'Cormorant Garamond', serif;
+  --font-heading-style: normal;
+  --font-heading-weight: 400;
+  --font-body-family: 'Jost', sans-serif;
+  --font-body-style: normal;
+  --font-body-weight: 400;
+
+  --buttons-radius: 30px;
+  --buttons-radius-outset: 30px;
+  --buttons-border-width: 1px;
+  --buttons-shadow-opacity: 0;
+
+  --product-card-corner-radius: 1.2rem;
+  --product-card-shadow-opacity: 0;
+  --collection-card-corner-radius: 1.2rem;
+  --collection-card-shadow-opacity: 0;
+  --blog-card-corner-radius: 1.2rem;
+  --blog-card-shadow-opacity: 0;
+  --media-shadow-opacity: 0;
+  --popup-shadow-opacity: 0;
+  --drawer-shadow-opacity: 0;
+  --text-boxes-shadow-opacity: 0;
+}
+
+body {
+  background-color: var(--purpura-bg);
+}
+
+.button,
+.button--primary {
+  letter-spacing: 0.1rem;
+}
+
+.button--secondary {
+  --alpha-button-background: 0;
+}
+
+/* Prices in Cormorant Garamond, brand purple — wins over component-price.css regardless of load order */
+.price .price-item,
+.price-item--regular,
+.price-item--sale {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--purpura-primary);
+  font-size: 1.8rem;
+  letter-spacing: 0.02rem;
+}
+
+.price--on-sale .price-item--regular {
+  color: var(--purpura-text-secondary);
+}
