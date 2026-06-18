@@ -31,7 +31,7 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "subtext": "<p>MARCA</p><p><a href=\"/pages/quienes-somos\" title=\"Nosotros\">Nuestra historia</a> <a href=\"/pages/nuestra-lavanda\">Nuestra lavanda </a><a href=\"/blogs/la-lavanda-y-sus-beneficios-todo-lo-que-esta-planta-puede-hacer-por-ti/la-lavanda-y-sus-beneficios-todo-lo-que-esta-planta-puede-hacer-por-ti\" title=\"La lavanda y sus beneficios: todo lo que esta planta puede hacer por ti\">Blog </a><a href=\"/pages/corporativo\">Corporativo</a></p>"
+            "subtext": "<p>MARCA</p><p><a href=\"/pages/quienes-somos\" title=\"Nosotros\">Nuestra historia</a> <a href=\"/blogs/la-lavanda-y-sus-beneficios-todo-lo-que-esta-planta-puede-hacer-por-ti\" title=\"La lavanda y sus beneficios: todo lo que esta planta puede hacer por ti\">Blog </a><a href=\"/pages/contacto\" title=\"Contacto\">Corporativo</a></p>"
           }
         },
         "text_contacto": {
