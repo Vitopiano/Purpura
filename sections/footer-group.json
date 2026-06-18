@@ -24,7 +24,7 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "subtext": "<p>TIENDA</p><p><a href=\"/collections/aromaterapia\">Aromaterapia</a> <a href=\"/collections/cosmetica-belleza\">Cosmética & Belleza</a> <a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/hogar\">Ambientación & Hogar</a><a href=\"/collections/kits\">Kits & regalos</a></p>"
+            "subtext": "<p>TIENDA</p><p><a href=\"/collections/aromaterapia\">Aromaterapia</a> <a href=\"/collections/hogar\">Ambientación & Hogar</a> <a href=\"/collections/cosmetica-belleza\">Cosmética & Belleza</a> <a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/kits\">Kits & regalos</a></p>"
           }
         },
         "text_marca": {
