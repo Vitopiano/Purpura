@@ -211,7 +211,7 @@
       "type": "featured-blog",
       "name": "t:sections.featured-blog.presets.name",
       "settings": {
-        "blog": "la-lavanda-y-sus-beneficios-todo-lo-que-esta-planta-puede-hacer-por-ti",
+        "blog": "la-lavanda-y-sus-beneficios",
         "post_limit": 2,
         "heading": "",
         "heading_size": "h2",
