@@ -38,7 +38,7 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "subtext": "<p>CONTACTO<br/><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"tel:+573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico</a></p>"
+            "subtext": "<p>CONTACTO<br/><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"https://wa.me/573118899844\" title=\"https://wa.me/573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico</a></p>"
           }
         }
       },
