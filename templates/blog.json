@@ -12,13 +12,20 @@
     "main": {
       "type": "main-blog",
       "settings": {
+        "show_hero": true,
+        "hero_label": "Del campo a tu rutina",
+        "hero_description": "<p>Descubre los beneficios de la lavanda, consejos de cuidado personal y todo lo que necesitas saber para vivir con más calma, intención y bienestar.</p>",
+        "show_topics": true,
+        "show_featured": true,
+        "grid_label": "Más artículos",
+        "grid_title": "Explora el blog",
         "layout": "grid",
         "show_image": true,
-        "image_height": "medium",
+        "image_height": "small",
         "show_date": true,
         "show_author": false,
         "padding_top": 0,
-        "padding_bottom": 68
+        "padding_bottom": 32
       }
     }
   },

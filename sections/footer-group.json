@@ -24,21 +24,21 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "subtext": "<p>TIENDA</p><p><a href=\"/collections/aromaterapia\">Plantas</a> <a href=\"/collections/cosmetica-belleza\">Cosmética </a><a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/hogar\">Hogar </a><a href=\"/collections/kits\">Kits & regalos</a></p>"
+            "subtext": "<p>TIENDA</p><p><a href=\"/collections/aromaterapia\">Aromaterapia</a> <a href=\"/collections/hogar\">Ambientación & Hogar</a> <a href=\"/collections/cosmetica-belleza\">Cosmética & Belleza</a> <a href=\"/collections/proteccion-solar\">Protector solar</a> <a href=\"/collections/kits\">Kits & regalos</a></p>"
           }
         },
         "text_marca": {
           "type": "text",
           "settings": {
             "heading": "",
-            "subtext": "<p>MARCA</p><p><a href=\"/pages/nuestra-historia\">Nuestra historia</a> <a href=\"/pages/nuestra-lavanda\">Nuestra lavanda </a><a href=\"/blogs/news\">Blog </a><a href=\"/pages/corporativo\">Corporativo</a></p>"
+            "subtext": "<p>MARCA</p><p><a href=\"/pages/quienes-somos\" title=\"Nosotros\">Nuestra historia</a> <a href=\"/blogs/la-lavanda-y-sus-beneficios-todo-lo-que-esta-planta-puede-hacer-por-ti\" title=\"La lavanda y sus beneficios: todo lo que esta planta puede hacer por ti\">Blog </a><a href=\"/pages/contacto\" title=\"Contacto\">Corporativo</a></p>"
           }
         },
         "text_contacto": {
           "type": "text",
           "settings": {
             "heading": "",
-            "subtext": "<p>CONTACTO<br/><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"tel:+573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico</a></p>"
+            "subtext": "<p>CONTACTO<br/><a href=\"mailto:purpura@purpuraco.com\">purpura@purpuraco.com </a><a href=\"https://wa.me/573118899844\" title=\"https://wa.me/573118899844\">(311) 889-9844 </a><a href=\"https://www.instagram.com/purpuraico/\">@purpuraico</a></p>"
           }
         }
       },
