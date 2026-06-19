@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "¿Sus productos tienen registro Invima?",
+            "answer": "<p>Sí. Todos nuestros productos cosméticos cuentan con registro Invima vigente, lo que garantiza que han sido evaluados y aprobados por las autoridades sanitarias colombianas. El número de registro aparece en la etiqueta de cada producto y en su página de detalle en nuestra tienda.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "¿Hacen envíos a todo Colombia?",
+            "answer": "<p>Sí, realizamos envíos a todo el territorio colombiano a través de empresas transportadoras legalmente constituidas. La cobertura está sujeta a disponibilidad logística en zonas de difícil acceso.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto demora el envío?",
+            "answer": "<p>Una vez confirmado y aprobado el pago, los tiempos estimados son: ciudades principales entre 2 y 5 días hábiles, municipios intermedios o zonas apartadas entre 5 y 10 días hábiles. Recibirás un correo con el número de guía para hacer seguimiento de tu pedido.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto cuesta el envío?",
+            "answer": "<p>El costo del envío depende del destino, peso y volumen del pedido y se calcula automáticamente antes de finalizar tu compra. Salvo promociones especiales indicadas, el valor del envío es asumido por el cliente.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "¿Los productos son naturales?",
+            "answer": "<p>Nuestros productos están formulados con ingredientes naturales y activos de alta calidad, inspirados en las propiedades terapéuticas de la lavanda. Todos son libres de parabenos y veganos.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "¿Los productos tienen parabenos?",
+            "answer": "<p>No. Todos los productos de PÚRPURA&Co. son libres de parabenos. Nos comprometemos a formular con ingredientes seguros para ti y para el medio ambiente.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "¿Los productos son aptos para pieles sensibles?",
+            "answer": "<p>La mayoría de nuestros productos están formulados para todo tipo de piel, incluyendo pieles sensibles. Te recomendamos leer los ingredientes de cada producto y realizar una prueba en una pequeña área de la piel antes del uso completo si tienes piel muy reactiva.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "¿Puedo devolver un producto?",
+            "answer": "<p>Sí. Tienes derecho de retracto dentro de los 5 días hábiles siguientes a la recepción del producto, siempre que esté sin usar, sin abrir, con etiquetas originales y con sello de seguridad intacto. Por razones sanitarias, no aceptamos devoluciones de productos cosméticos abiertos salvo defectos de fabricación. Escríbenos a purpura@purpuraco.com.</p>"
+          }
+        },
+        "q9": {
+          "type": "question",
+          "settings": {
+            "question": "¿Hacen regalos corporativos?",
+            "answer": "<p>Sí. Contamos con kits especiales para regalos empresariales, detalles de grado, eventos corporativos y recuerdos de boda. Puedes personalizar la presentación según el volumen y la ocasión. Escríbenos para cotizar.</p>"
+          }
+        },
+        "q10": {
+          "type": "question",
+          "settings": {
+            "question": "¿Venden al por mayor o manejan distribuidores?",
+            "answer": "<p>Sí, tenemos programa de distribuidores. Si estás interesado en vender PÚRPURA&Co. en tu tienda o región, escríbenos a purpura@purpuraco.com con el asunto \"Distribuidor\" y con gusto te enviamos información.</p>"
+          }
+        },
+        "q11": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cómo cuido mi planta de lavanda?",
+            "answer": "<p>Ubícala en un lugar con buena iluminación natural, preferiblemente con sol directo entre 4 y 6 horas al día. Riega moderadamente evitando encharcamientos — la lavanda no tolera el exceso de agua. Mantén en espacios ventilados y realiza una poda leve después de la floración para estimular el crecimiento.</p>"
+          }
+        },
+        "q12": {
+          "type": "question",
+          "settings": {
+            "question": "¿Dónde están ubicados?",
+            "answer": "<p>Estamos en Bogotá, Colombia. Atención por WhatsApp al (311) 889-9844 o por correo a purpura@purpuraco.com.</p>"
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12"],
+      "settings": {
+        "label": "Ayuda",
+        "heading": "Preguntas frecuentes",
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": ["main", "faq"]
+}
