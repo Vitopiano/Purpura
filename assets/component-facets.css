@@ -1255,3 +1255,57 @@ input.mobile-facets__checkbox {
     padding: 0 1rem 1rem;
   }
 }
+
+/* PÚRPURA & Co. brand filters */
+.facets__heading,
+.facets__heading--vertical,
+.facet-filters__label {
+  color: var(--purpura-text);
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.facets__summary,
+.mobile-facets__heading {
+  color: var(--purpura-text-secondary);
+}
+
+.facets__disclosure[open] .facets__summary,
+.facets__summary:hover,
+.facets__label:hover,
+.facets__label.active {
+  color: var(--purpura-primary);
+}
+
+.facet-checkbox > input[type='checkbox']:checked ~ .svg-wrapper > .icon-checkmark,
+.mobile-facets__label > input[type='checkbox']:checked ~ .icon-checkmark {
+  fill: var(--purpura-primary);
+}
+
+.facets__display {
+  border-color: var(--purpura-border);
+  border-radius: 1.2rem;
+}
+
+.active-facets__button-inner {
+  color: var(--purpura-primary);
+  box-shadow: 0 0 0 0.1rem var(--purpura-primary);
+  border-radius: 2.4rem;
+  font-family: 'Jost', sans-serif;
+}
+
+.active-facets__button--light .active-facets__button-inner {
+  box-shadow: 0 0 0 0.1rem var(--purpura-border);
+  color: var(--purpura-text-secondary);
+}
+
+.active-facets__button:hover .active-facets__button-inner {
+  box-shadow: 0 0 0 0.15rem var(--purpura-primary);
+  color: var(--purpura-primary);
+}
+
+.facets__and-helptext {
+  color: var(--purpura-text-secondary);
+}

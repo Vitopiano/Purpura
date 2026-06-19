@@ -953,7 +953,7 @@
     </div>
 
     {%- liquid
-      assign featured_ingredients_raw = product.metafields.custom.ingredientes_destacados.value
+      assign featured_ingredients_raw = product.metafields.custom.ingredientes.value
     -%}
     {%- if featured_ingredients_raw != blank -%}
       <div class="page-width product__featured-ingredients">
