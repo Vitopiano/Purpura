@@ -1,0 +1,149 @@
+{%- style -%}
+  .brand-values {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem 4rem;
+    padding: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px 2rem {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    border-bottom: 0.5px solid #e8ddef;
+  }
+
+  @media screen and (min-width: 750px) {
+    .brand-values {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .brand-values__item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6d4580;
+    white-space: nowrap;
+  }
+
+  .brand-values__item .svg-wrapper {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .brand-values__item svg,
+  .brand-values__item svg path {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .brand-values {
+      gap: 1rem 2rem;
+    }
+
+    .brand-values__item {
+      font-size: 1rem;
+    }
+  }
+{%- endstyle -%}
+
+<div class="brand-values color-{{ section.settings.color_scheme }} gradient">
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'value' -%}
+      <div class="brand-values__item" {{ block.shopify_attributes }}>
+        {%- if block.settings.icon != blank -%}
+          <span class="svg-wrapper">{{ block.settings.icon | inline_asset_content }}</span>
+        {%- endif -%}
+        <span>{{ block.settings.text | escape }}</span>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Valores de marca",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-4"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Valor",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Ícono",
+          "options": [
+            { "value": "icon-leaf.svg", "label": "Hoja" },
+            { "value": "icon-map-pin.svg", "label": "Ubicación" },
+            { "value": "icon-plant.svg", "label": "Planta" },
+            { "value": "icon-checkmark.svg", "label": "Aprobado" },
+            { "value": "icon-heart.svg", "label": "Corazón" },
+            { "value": "icon-recycle.svg", "label": "Reciclaje" }
+          ],
+          "default": "icon-leaf.svg"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Texto",
+          "default": "Libre de parabenos"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Valores de marca",
+      "blocks": [
+        { "type": "value", "settings": { "icon": "icon-leaf.svg", "text": "Libre de parabenos" } },
+        { "type": "value", "settings": { "icon": "icon-map-pin.svg", "text": "Producto colombiano" } },
+        { "type": "value", "settings": { "icon": "icon-plant.svg", "text": "Inspirado en la naturaleza" } },
+        { "type": "value", "settings": { "icon": "icon-checkmark.svg", "text": "Dermatológicamente aprobado" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
