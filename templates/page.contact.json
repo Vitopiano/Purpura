@@ -18,13 +18,10 @@
       }
     },
     "form": {
-      "type": "corporate-contact-form",
+      "type": "contact-form",
       "settings": {
-        "heading": "Contacto corporativo",
+        "heading": "Contáctanos",
         "heading_size": "h1",
-        "subheading": "<p>Cuéntanos sobre tu empresa y nos pondremos en contacto contigo.</p>",
-        "button_label": "Enviar",
-        "success_message": "¡Gracias! Hemos recibido tu mensaje y te contactaremos pronto.",
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
