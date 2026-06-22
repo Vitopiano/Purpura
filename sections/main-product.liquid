@@ -953,40 +953,41 @@
     </div>
 
     {%- liquid
-      assign featured_ingredients_raw = product.metafields.custom.ingredientes.value
+      assign featured_ingredients = product.metafields.custom.ingredientes.value
     -%}
-    {%- if featured_ingredients_raw != blank -%}
+    {%- if featured_ingredients != blank -%}
       <div class="page-width product__featured-ingredients">
         <p class="product__featured-ingredients-label">Por qué lo vas a amar</p>
         <h2 class="product__featured-ingredients-title">Ingredientes destacados</h2>
         <div class="product__featured-ingredients-grid">
-          {%- assign ingredient_list = featured_ingredients_raw | split: ',' -%}
-          {%- for ingredient in ingredient_list -%}
-            {%- assign ingredient_name = ingredient | strip -%}
-            {%- assign ingredient_key = ingredient_name | downcase -%}
+          {%- for ingredient in featured_ingredients -%}
             {%- liquid
+              assign ingredient_handle = ingredient.system.handle
+              assign ingredient_name = ingredient.name.value | default: ingredient.nombre.value | default: ingredient.title.value | default: ingredient_handle | replace: '-', ' ' | capitalize
+              assign ingredient_key = ingredient_handle | downcase
+
               case ingredient_key
-                when 'ácido hialurónico', 'acido hialuronico'
+                when 'acido-hialuronico', 'ácido-hialurónico'
                   assign ingredient_description = 'Hidrata profundamente y rellena la piel desde adentro.'
-                when 'aloe vera'
+                when 'aloe-vera'
                   assign ingredient_description = 'Calma, regenera y suaviza la piel de forma natural.'
-                when 'lavanda', 'extracto de lavanda'
+                when 'lavanda', 'extracto-de-lavanda'
                   assign ingredient_description = 'Relaja, equilibra y aporta un aroma envolvente.'
-                when 'vitamina c'
+                when 'vitamina-c'
                   assign ingredient_description = 'Ilumina el tono de la piel y aporta brillo natural.'
-                when 'vitamina e'
+                when 'vitamina-e'
                   assign ingredient_description = 'Antioxidante que protege la piel del daño ambiental.'
-                when 'coenzima q10', 'q10'
+                when 'coenzima-q10', 'q10'
                   assign ingredient_description = 'Combate los signos de la edad y revitaliza la piel.'
-                when 'manteca de karité', 'manteca de karite'
+                when 'manteca-de-karite', 'manteca-de-karité'
                   assign ingredient_description = 'Nutre profundamente e hidrata pieles secas.'
-                when 'aceite de coco'
+                when 'aceite-de-coco'
                   assign ingredient_description = 'Suaviza, nutre y deja la piel sedosa.'
                 when 'glicerina'
                   assign ingredient_description = 'Retiene la humedad y mantiene la piel hidratada.'
-                when 'aceite de jojoba'
+                when 'aceite-de-jojoba'
                   assign ingredient_description = 'Equilibra la piel sin obstruir los poros.'
-                when 'manzanilla', 'extracto de manzanilla'
+                when 'manzanilla', 'extracto-de-manzanilla'
                   assign ingredient_description = 'Calma irritaciones y aporta suavidad a la piel.'
                 else
                   assign ingredient_description = 'Ingrediente activo seleccionado por su calidad y pureza.'
