@@ -211,7 +211,6 @@
       width: 1.8rem;
       height: 1.8rem;
       color: var(--purpura-primary);
-      fill: var(--purpura-primary);
       margin-bottom: 0.8rem;
     }
 
@@ -960,34 +959,67 @@
               assign ingredient_key = ingredient_handle | downcase
 
               case ingredient_key
-                when 'acido-hialuronico', 'ácido-hialurónico'
-                  assign ingredient_description = 'Hidrata profundamente y rellena la piel desde adentro.'
-                when 'aloe-vera'
-                  assign ingredient_description = 'Calma, regenera y suaviza la piel de forma natural.'
                 when 'lavanda', 'extracto-de-lavanda'
-                  assign ingredient_description = 'Relaja, equilibra y aporta un aroma envolvente.'
-                when 'vitamina-c'
-                  assign ingredient_description = 'Ilumina el tono de la piel y aporta brillo natural.'
-                when 'vitamina-e'
-                  assign ingredient_description = 'Antioxidante que protege la piel del daño ambiental.'
-                when 'coenzima-q10', 'q10'
-                  assign ingredient_description = 'Combate los signos de la edad y revitaliza la piel.'
+                  assign ingredient_description = 'Relaja, calma y purifica. Propiedades antimicrobianas, antiinflamatorias y aromaterapéuticas que benefician tanto la piel como la mente.'
+                  assign ingredient_icon = 'icon-ti-leaf.svg'
+                when 'acido-hialuronico', 'ácido-hialurónico'
+                  assign ingredient_description = 'Retiene hasta 1000 veces su peso en agua. Hidrata en profundidad, rellena y suaviza la piel desde adentro.'
+                  assign ingredient_icon = 'icon-ti-droplet.svg'
+                when 'niacinamida'
+                  assign ingredient_description = 'Regula el sebo, mejora la textura y unifica el tono. Reduce manchas e imperfecciones con uso constante.'
+                  assign ingredient_icon = 'icon-ti-sparkles.svg'
+                when 'colageno-hidrolizado', 'colágeno-hidrolizado'
+                  assign ingredient_description = 'Aporta firmeza y elasticidad. Ayuda a reducir los signos visibles del tiempo en la piel.'
+                  assign ingredient_icon = 'icon-ti-arrow-up.svg'
+                when 'aloe-vera'
+                  assign ingredient_description = 'Calma, hidrata y refresca de forma inmediata. Ideal para pieles sensibles o expuestas al sol.'
+                  assign ingredient_icon = 'icon-ti-plant-2.svg'
+                when 'centella-asiatica', 'centella-asiática'
+                  assign ingredient_description = 'Estimula la producción de colágeno y acelera la regeneración celular. Mejora la elasticidad de la piel.'
+                  assign ingredient_icon = 'icon-ti-refresh.svg'
+                when 'calendula', 'caléndula'
+                  assign ingredient_description = 'Calmante y regeneradora. Ideal para pieles sensibles, irritadas o con tendencia al enrojecimiento.'
+                  assign ingredient_icon = 'icon-ti-sun.svg'
+                when 'aceite-de-argan', 'aceite-de-argán'
+                  assign ingredient_description = 'Rico en vitamina E y ácidos grasos. Nutre, suaviza y aporta brillo sin dejar sensación grasa.'
+                  assign ingredient_icon = 'icon-ti-droplet-half-2.svg'
                 when 'manteca-de-karite', 'manteca-de-karité'
-                  assign ingredient_description = 'Nutre profundamente e hidrata pieles secas.'
+                  assign ingredient_description = 'Hidratación profunda e intensiva. Forma una barrera protectora que previene la pérdida de humedad.'
+                  assign ingredient_icon = 'icon-ti-shield.svg'
+                when 'coenzima-q10', 'q10'
+                  assign ingredient_description = 'Activa la regeneración celular y neutraliza radicales libres que aceleran el envejecimiento.'
+                  assign ingredient_icon = 'icon-ti-bolt.svg'
+                when 'vitamina-c'
+                  assign ingredient_description = 'Ilumina, unifica el tono y estimula la síntesis de colágeno. Antioxidante que protege del daño solar.'
+                  assign ingredient_icon = 'icon-ti-sun.svg'
+                when 'vitamina-e'
+                  assign ingredient_description = 'Antioxidante natural que protege y nutre la piel. Mejora la textura y potencia los efectos de la Vitamina C.'
+                  assign ingredient_icon = 'icon-ti-heart.svg'
+                when 'ginseng'
+                  assign ingredient_description = 'Estimula la microcirculación, activa las células y tiene potente efecto antioxidante contra el envejecimiento.'
+                  assign ingredient_icon = 'icon-ti-flame.svg'
+                when 'ginkgo-biloba'
+                  assign ingredient_description = 'Uno de los antioxidantes más potentes. Protege la piel del daño ambiental y mejora la circulación cutánea.'
+                  assign ingredient_icon = 'icon-ti-shield-check.svg'
                 when 'aceite-de-coco'
-                  assign ingredient_description = 'Suaviza, nutre y deja la piel sedosa.'
+                  assign ingredient_description = 'Hidrata profundamente y tiene propiedades antimicrobianas. Deja la piel suave, sedosa y ligeramente perfumada.'
+                  assign ingredient_icon = 'icon-ti-droplet.svg'
                 when 'glicerina'
                   assign ingredient_description = 'Retiene la humedad y mantiene la piel hidratada.'
+                  assign ingredient_icon = 'icon-ti-droplet.svg'
                 when 'aceite-de-jojoba'
                   assign ingredient_description = 'Equilibra la piel sin obstruir los poros.'
+                  assign ingredient_icon = 'icon-ti-droplet-half-2.svg'
                 when 'manzanilla', 'extracto-de-manzanilla'
                   assign ingredient_description = 'Calma irritaciones y aporta suavidad a la piel.'
+                  assign ingredient_icon = 'icon-ti-leaf.svg'
                 else
                   assign ingredient_description = 'Ingrediente activo seleccionado por su calidad y pureza.'
+                  assign ingredient_icon = 'icon-ti-leaf.svg'
               endcase
             -%}
             <div class="product__ingredient-card">
-              <span class="product__ingredient-icon svg-wrapper">{{- 'icon-leaf.svg' | inline_asset_content -}}</span>
+              <span class="product__ingredient-icon svg-wrapper">{{- ingredient_icon | inline_asset_content -}}</span>
               <p class="product__ingredient-name">{{ ingredient_name }}</p>
               <p class="product__ingredient-description">{{ ingredient_description }}</p>
             </div>
