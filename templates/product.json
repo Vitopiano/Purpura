@@ -78,7 +78,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Ingredientes",
-            "metafield": "custom.ingredientes",
+            "metafield": "custom.ingredientes{{ product.metafields.custom.ingredientes | metafield_text: field: 'label' }}",
             "icon": "none",
             "content": "",
             "page": ""
