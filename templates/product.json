@@ -156,7 +156,7 @@
       "settings": {
         "collection": "mas-vendidos",
         "products_to_show": 3,
-        "title": "Colección destacada",
+        "title": "Los más vendidos",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
