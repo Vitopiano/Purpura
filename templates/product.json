@@ -78,7 +78,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Ingredientes",
-            "metafield": "custom.composicion",
+            "metafield": "",
             "icon": "none",
             "content": "",
             "page": ""
