@@ -117,7 +117,7 @@
       font-size: 1.3rem;
       letter-spacing: 0.03em;
       color: var(--purpura-accent);
-      margin: 0.6rem 0 0;
+      margin: 1.5rem 0 0.5rem;
     }
 
     .product__accordion.accordion {
@@ -323,6 +323,7 @@
             <p class="product__category">{{ product.collections.first.title }}</p>
           {%- endif -%}
 
+          {%- assign invima_rendered = false -%}
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
@@ -364,28 +365,14 @@
                     price_class: 'price--large'
                   -%}
                 </div>
-                {%- if product.metafields.custom.invima.value != blank -%}
-                  <p class="product__invima-notice">
-                    Invima {{ product.metafields.custom.invima.value }} · Precio con IVA incluido
-                  </p>
-                {%- endif -%}
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                     <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                   </div>
                 {%- endif -%}
-                {%- if cart.taxes_included or cart.duties_included or shop.shipping_policy.body != blank -%}
+                {%- if shop.shipping_policy.body != blank -%}
                   <div class="product__tax caption rte">
-                    {%- if cart.duties_included and cart.taxes_included -%}
-                      {{ 'products.product.duties_and_taxes_included' | t }}
-                    {%- elsif cart.taxes_included -%}
-                      {{ 'products.product.taxes_included' | t }}
-                    {%- elsif cart.duties_included -%}
-                      {{ 'products.product.duties_included' | t }}
-                    {%- endif -%}
-                    {%- if shop.shipping_policy.body != blank -%}
-                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                    {%- endif -%}
+                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
                   </div>
                 {%- endif -%}
                 <div {{ block.shopify_attributes }}>
@@ -465,6 +452,12 @@
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
+                {%- if invima_rendered == false -%}
+                  {%- assign invima_rendered = true -%}
+                  {%- if product.metafields.custom.invima.value != blank -%}
+                    <p class="product__invima-notice">Invima {{ product.metafields.custom.invima.value }}</p>
+                  {%- endif -%}
+                {%- endif -%}
                 {%- liquid
                   assign tab_content = block.settings.content
                   if block.settings.metafield == 'product.description'
