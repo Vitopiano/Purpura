@@ -28,9 +28,9 @@ variant-selects {
 
 .product-form__input--pill .form__label {
   font-family: 'Jost', sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--purpura-text);
 }
 
