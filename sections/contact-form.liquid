@@ -12,28 +12,54 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .corporate-contact .field__input {
+    font-family: 'Jost', sans-serif;
+  }
+
+  .corporate-contact__row {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .corporate-contact__row .field {
+    flex: 1 1 0;
+  }
+
+  @media screen and (max-width: 749px) {
+    .corporate-contact__row {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .corporate-contact .button {
+    margin-top: 1rem;
+  }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+  <div class="corporate-contact contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {{ section.settings.heading }}
       </h2>
-    {%- else -%}
-      <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <div class="corporate-contact__subheading rte">{{ section.settings.subheading }}</div>
+    {%- endif -%}
+
     {%- liquid
       assign contact_form_class = 'isolate'
       if settings.animations_reveal_on_scroll
         assign contact_form_class = 'isolate scroll-trigger animate--slide-in'
       endif
     -%}
-    {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+    {%- form 'contact', id: 'CorporateContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
           {{- 'icon-success.svg' | inline_asset_content -}}
-          {{ 'templates.contact.form.post_success' | t }}
+          {{ section.settings.success_message | default: '¡Gracias! Hemos recibido tu mensaje y te contactaremos pronto.' }}
         </h2>
       {%- elsif form.errors -%}
         <div class="form__message">
@@ -42,93 +68,76 @@
             {{ 'templates.contact.form.error_heading' | t }}
           </h2>
         </div>
-        <ul class="form-status-list caption-large" role="list">
-          <li>
-            <a href="#ContactForm-email" class="link">
-              {{ form.errors.translated_fields.email | capitalize }}
-              {{ form.errors.messages.email }}
-            </a>
-          </li>
-        </ul>
       {%- endif -%}
-      <div class="contact__fields">
+
+      <div class="corporate-contact__row">
         <div class="field">
           <input
             class="field__input"
-            autocomplete="name"
+            autocomplete="given-name"
             type="text"
-            id="ContactForm-name"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
-            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
+            id="CorporateContactForm-firstname"
+            name="contact[Nombre]"
+            value="{% if form.first_name %}{{ form.first_name }}{% endif %}"
+            placeholder="Nombre"
+            required
           >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+          <label class="field__label" for="CorporateContactForm-firstname">Nombre</label>
         </div>
-        <div class="field field--with-error">
+        <div class="field">
           <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
             class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
+            autocomplete="family-name"
+            type="text"
+            id="CorporateContactForm-lastname"
+            name="contact[Apellido]"
+            placeholder="Apellido"
+            required
           >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                <span class="svg-wrapper">
-                  {{- 'icon-error.svg' | inline_asset_content -}}
-                </span>
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
+          <label class="field__label" for="CorporateContactForm-lastname">Apellido</label>
         </div>
       </div>
+
       <div class="field">
         <input
-          type="tel"
-          id="ContactForm-phone"
+          class="field__input"
+          autocomplete="organization"
+          type="text"
+          id="CorporateContactForm-company"
+          name="contact[Empresa]"
+          placeholder="Empresa"
+          required
+        >
+        <label class="field__label" for="CorporateContactForm-company">Empresa</label>
+      </div>
+
+      <div class="field">
+        <input
           class="field__input"
           autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
+          type="tel"
+          id="CorporateContactForm-whatsapp"
+          name="contact[Número de WhatsApp]"
+          placeholder="Número de WhatsApp"
+          required
         >
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+        <label class="field__label" for="CorporateContactForm-whatsapp">Número de WhatsApp</label>
       </div>
+
       <div class="field">
         <textarea
-          rows="10"
-          id="ContactForm-body"
+          rows="6"
+          id="CorporateContactForm-body"
           class="text-area field__input"
-          name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-        >
-          {{- form.body -}}
-        </textarea>
-        <label class="form__label field__label" for="ContactForm-body">
-          {{- 'templates.contact.form.comment' | t -}}
-        </label>
+          name="contact[Comentarios]"
+          placeholder="Comentarios"
+        >{{- form.body -}}</textarea>
+        <label class="form__label field__label" for="CorporateContactForm-body">Comentarios</label>
       </div>
+
       <div class="contact__button">
-        <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
+        <button type="submit" class="button button--primary button--full-width">
+          {{ section.settings.button_label | default: 'Enviar' }}
         </button>
       </div>
     {%- endform -%}
@@ -137,7 +146,7 @@
 
 {% schema %}
 {
-  "name": "t:sections.contact-form.name",
+  "name": "Contacto corporativo",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -147,36 +156,37 @@
     {
       "type": "inline_richtext",
       "id": "heading",
-      "default": "t:sections.contact-form.settings.title.default",
-      "label": "t:sections.contact-form.settings.title.label"
+      "default": "Contacto corporativo",
+      "label": "Título"
     },
     {
       "type": "select",
       "id": "heading_size",
       "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        },
-        {
-          "value": "hxl",
-          "label": "t:sections.all.heading_size.options__4.label"
-        },
-        {
-          "value": "hxxl",
-          "label": "t:sections.all.heading_size.options__5.label"
-        }
+        { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" }
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "default": "<p>Cuéntanos sobre tu empresa y nos pondremos en contacto contigo.</p>",
+      "label": "Texto debajo del título"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "Enviar",
+      "label": "Texto del botón"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "default": "¡Gracias! Hemos recibido tu mensaje y te contactaremos pronto.",
+      "label": "Mensaje de confirmación"
     },
     {
       "type": "color_scheme",
@@ -211,7 +221,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.contact-form.presets.name"
+      "name": "Contacto corporativo"
     }
   ]
 }
