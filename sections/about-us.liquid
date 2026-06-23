@@ -6,7 +6,6 @@
   }
 
   .qs-hero {
-    background: #3d1a5e;
     padding: 4rem 2rem;
     text-align: center;
   }
@@ -14,13 +13,13 @@
     font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--purpura-secondary);
+    color: rgba(var(--color-foreground), 0.75);
     margin-bottom: 12px;
   }
   .qs-hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 48px;
-    color: #fff;
+    color: rgb(var(--color-foreground));
     font-weight: 400;
     margin: 0 0 1rem;
     line-height: 1.1;
@@ -28,7 +27,7 @@
   .qs-hero-tagline {
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
-    color: rgba(219, 138, 255, 0.85);
+    color: rgba(var(--color-foreground), 0.85);
     font-style: italic;
     margin: 0;
   }
@@ -42,23 +41,14 @@
   .qs-intro-img {
     background: #ede0f7;
     min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
   }
-  .qs-intro-img-inner {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: #c9a6e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .qs-intro-img-inner .svg-wrapper {
-    width: 48px;
-    height: 48px;
-    color: var(--purpura-primary);
+  .qs-intro-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
   }
   .qs-intro-body {
     padding: 3rem 2.5rem;
@@ -206,13 +196,11 @@
   }
 
   .qs-certs {
-    background: #2c2c2c;
     padding: 2rem;
     display: flex;
     justify-content: center;
     gap: 32px;
     flex-wrap: wrap;
-    border-bottom: 0.5px solid #3d3d3d;
   }
   .qs-cert {
     display: flex;
@@ -224,7 +212,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(219, 138, 255, 0.15);
+    background: rgba(var(--color-foreground), 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -232,13 +220,13 @@
   .qs-cert-icon .svg-wrapper {
     width: 18px;
     height: 18px;
-    color: var(--purpura-secondary);
+    color: rgb(var(--color-foreground));
   }
   .qs-cert-label {
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(var(--color-foreground), 0.75);
     text-align: center;
     max-width: 72px;
     line-height: 1.4;
@@ -251,7 +239,7 @@
   }
   .qs-equipo-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
   .qs-equipo-card {
@@ -344,6 +332,12 @@
     border: 1px solid rgba(255, 255, 255, 0.5);
   }
 
+  @media screen and (max-width: 989px) {
+    .qs-equipo-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   @media screen and (max-width: 749px) {
     .qs-hero-title {
       font-size: 36px;
@@ -362,7 +356,7 @@
 {%- endstyle -%}
 
 <div class="qs">
-  <div class="qs-hero">
+  <div class="qs-hero color-{{ section.settings.hero_color_scheme }} gradient">
     <p class="qs-hero-label">Nuestra historia</p>
     <h1 class="qs-hero-title">El arte de vivir<br>en calma</h1>
     <p class="qs-hero-tagline">Una marca colombiana nacida de la lavanda y el propósito</p>
@@ -370,9 +364,13 @@
 
   <div class="qs-intro">
     <div class="qs-intro-img">
-      <div class="qs-intro-img-inner">
-        <span class="svg-wrapper">{{- 'icon-ti-plant-2.svg' | inline_asset_content -}}</span>
-      </div>
+      <img
+        src="https://cdn.shopify.com/s/files/1/0933/8208/2866/files/WhatsApp_Image_2026-06-12_at_12.47.17_PM.jpg?v=1781287258"
+        alt="Fundadores de PÚRPURA&amp;Co."
+        loading="lazy"
+        width="600"
+        height="600"
+      >
     </div>
     <div class="qs-intro-body">
       <p class="qs-label">Quiénes somos</p>
@@ -447,7 +445,7 @@
     </div>
   </div>
 
-  <div class="qs-certs">
+  <div class="qs-certs color-{{ section.settings.certs_color_scheme }} gradient">
     <div class="qs-cert">
       <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-paw.svg' | inline_asset_content -}}</span></div>
       <span class="qs-cert-label">No testado en animales</span>
@@ -531,7 +529,20 @@
   "disabled_on": {
     "groups": ["header", "footer"]
   },
-  "settings": [],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "hero_color_scheme",
+      "label": "Esquema de color del banner inicial",
+      "default": "scheme-lilac"
+    },
+    {
+      "type": "color_scheme",
+      "id": "certs_color_scheme",
+      "label": "Esquema de color de la franja de certificaciones",
+      "default": "scheme-4"
+    }
+  ],
   "presets": [
     {
       "name": "Quiénes somos"
