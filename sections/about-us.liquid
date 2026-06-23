@@ -349,13 +349,21 @@
 
   <div class="qs-intro color-{{ section.settings.intro_color_scheme }} gradient">
     <div class="qs-intro-img">
-      <img
-        src="https://cdn.shopify.com/s/files/1/0933/8208/2866/files/WhatsApp_Image_2026-06-12_at_12.47.17_PM.jpg?v=1781287258"
-        alt="Fundadores de PÚRPURA&amp;Co."
-        loading="lazy"
-        width="600"
-        height="600"
-      >
+      {%- if section.settings.founders_image != blank -%}
+        {{
+          section.settings.founders_image
+          | image_url: width: 1200
+          | image_tag: loading: 'lazy', alt: section.settings.founders_image.alt | default: 'Fundadores de PÚRPURA&Co.'
+        }}
+      {%- else -%}
+        <img
+          src="https://cdn.shopify.com/s/files/1/0933/8208/2866/files/WhatsApp_Image_2026-06-12_at_12.47.17_PM.jpg?v=1781287258"
+          alt="Fundadores de PÚRPURA&amp;Co."
+          loading="lazy"
+          width="600"
+          height="600"
+        >
+      {%- endif -%}
     </div>
     <div class="qs-intro-body">
       <div class="qs-intro-block">
@@ -516,6 +524,11 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "founders_image",
+      "label": "Foto de los fundadores"
+    },
     {
       "type": "color_scheme",
       "id": "hero_color_scheme",
