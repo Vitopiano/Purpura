@@ -36,11 +36,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    border-bottom: 0.5px solid var(--purpura-border);
   }
   .qs-intro-img {
     background: #ede0f7;
-    min-height: 320px;
+    min-height: 100%;
     overflow: hidden;
   }
   .qs-intro-img img {
@@ -54,90 +53,77 @@
     padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
+    gap: 2.5rem;
     justify-content: center;
   }
   .qs-label {
     font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--purpura-accent);
+    color: rgba(var(--color-foreground), 0.7);
     margin-bottom: 8px;
   }
   .qs-intro-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
-    color: var(--purpura-text);
+    color: rgb(var(--color-foreground));
     font-weight: 400;
     margin: 0 0 1.25rem;
     line-height: 1.2;
   }
   .qs-intro-text {
     font-size: 14px;
-    color: #555;
+    color: rgba(var(--color-foreground), 0.75);
     line-height: 1.85;
     margin: 0;
   }
 
-  .qs-mv {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    background: var(--purpura-bg-secondary);
-    border-bottom: 0.5px solid var(--purpura-border);
-  }
-  .qs-mv-item {
-    padding: 2.5rem;
-  }
-  .qs-mv-item:first-child {
-    border-right: 0.5px solid var(--purpura-border);
-  }
   .qs-mv-icon {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #fff;
+    background: rgba(var(--color-foreground), 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    border: 0.5px solid var(--purpura-border);
+    border: 0.5px solid rgba(var(--color-foreground), 0.12);
   }
   .qs-mv-icon .svg-wrapper {
     width: 18px;
     height: 18px;
-    color: var(--purpura-primary);
+    color: rgb(var(--color-foreground));
   }
   .qs-mv-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 22px;
-    color: var(--purpura-text);
+    color: rgb(var(--color-foreground));
     font-weight: 400;
     margin: 0 0 12px;
   }
   .qs-mv-text {
     font-size: 13px;
-    color: #555;
+    color: rgba(var(--color-foreground), 0.75);
     line-height: 1.8;
     margin: 0;
   }
 
   .qs-historia {
     padding: 3.5rem 2rem;
-    border-bottom: 0.5px solid var(--purpura-border);
     text-align: center;
   }
   .qs-historia-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 34px;
-    color: var(--purpura-text);
+    color: rgb(var(--color-foreground));
     font-weight: 400;
     margin: 0 0 1.5rem;
   }
   .qs-historia-text {
     font-size: 14px;
-    color: #555;
+    color: rgba(var(--color-foreground), 0.75);
     line-height: 1.9;
-    max-width: 580px;
+    max-width: 667px;
     margin: 0 auto;
   }
 
@@ -287,20 +273,19 @@
   }
 
   .qs-cta {
-    background: var(--purpura-primary);
     padding: 3rem 2rem;
     text-align: center;
   }
   .qs-cta-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 32px;
-    color: #fff;
+    color: rgb(var(--color-foreground));
     font-weight: 400;
     margin: 0 0 8px;
   }
   .qs-cta-text {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(var(--color-foreground), 0.8);
     margin: 0 0 1.5rem;
   }
   .qs-cta-btns {
@@ -322,14 +307,14 @@
     display: inline-block;
   }
   .qs-btn-w {
-    background: #fff;
-    color: var(--purpura-primary);
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
     border: none;
   }
   .qs-btn-o {
     background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: rgb(var(--color-foreground));
+    border: 1px solid rgba(var(--color-foreground), 0.5);
   }
 
   @media screen and (max-width: 989px) {
@@ -362,7 +347,7 @@
     <p class="qs-hero-tagline">Una marca colombiana nacida de la lavanda y el propósito</p>
   </div>
 
-  <div class="qs-intro">
+  <div class="qs-intro color-{{ section.settings.intro_color_scheme }} gradient">
     <div class="qs-intro-img">
       <img
         src="https://cdn.shopify.com/s/files/1/0933/8208/2866/files/WhatsApp_Image_2026-06-12_at_12.47.17_PM.jpg?v=1781287258"
@@ -373,34 +358,35 @@
       >
     </div>
     <div class="qs-intro-body">
-      <p class="qs-label">Quiénes somos</p>
-      <h2 class="qs-intro-title">Transformamos la esencia de la lavanda en bienestar real</h2>
-      <p class="qs-intro-text">
-        PÚRPURA&amp;Co. nació de una convicción simple: la lavanda tiene el poder de transformar cómo te sientes, cómo luce tu piel y cómo se siente tu hogar. Somos una marca colombiana artesanal que combina tradición e innovación para llevar los beneficios de esta planta milenaria a tu vida diaria — en forma de cosméticos, aromaterapia, ambientación y plantas vivas. Todo lo que hacemos está libre de parabenos, dermatológicamente aprobado y hecho con intención.
-      </p>
+      <div class="qs-intro-block">
+        <p class="qs-label">Quiénes somos</p>
+        <h2 class="qs-intro-title">Transformamos la esencia de la lavanda en bienestar real</h2>
+        <p class="qs-intro-text">
+          PÚRPURA&amp;Co. nació de una convicción simple: la lavanda tiene el poder de transformar cómo te sientes, cómo luce tu piel y cómo se siente tu hogar. Somos una marca colombiana artesanal que combina tradición e innovación para llevar los beneficios de esta planta milenaria a tu vida diaria — en forma de cosméticos, aromaterapia, ambientación y plantas vivas. Todo lo que hacemos está libre de parabenos, dermatológicamente aprobado y hecho con intención.
+        </p>
+      </div>
+
+      <div class="qs-intro-block qs-mv-item">
+        <div class="qs-mv-icon"><span class="svg-wrapper">{{- 'icon-ti-target.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-label">Misión</p>
+        <h3 class="qs-mv-title">Lo que nos mueve cada día</h3>
+        <p class="qs-mv-text">
+          Transformar la esencia de la lavanda en productos de bienestar que acompañan tus rutinas diarias con cuidado, equilibrio y una experiencia sensorial que invita a la calma. Cada producto nace del compromiso con la naturaleza, la calidad y el bienestar real de las personas.
+        </p>
+      </div>
+
+      <div class="qs-intro-block qs-mv-item">
+        <div class="qs-mv-icon"><span class="svg-wrapper">{{- 'icon-ti-eye.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-label">Visión</p>
+        <h3 class="qs-mv-title">Hacia dónde vamos</h3>
+        <p class="qs-mv-text">
+          Ser la marca colombiana de referencia en bienestar con lavanda, reconocida por la calidad de sus productos, su compromiso con lo natural y su capacidad de transformar los pequeños momentos cotidianos en rituales de autocuidado consciente.
+        </p>
+      </div>
     </div>
   </div>
 
-  <div class="qs-mv">
-    <div class="qs-mv-item">
-      <div class="qs-mv-icon"><span class="svg-wrapper">{{- 'icon-ti-target.svg' | inline_asset_content -}}</span></div>
-      <p class="qs-label">Misión</p>
-      <h3 class="qs-mv-title">Lo que nos mueve cada día</h3>
-      <p class="qs-mv-text">
-        Transformar la esencia de la lavanda en productos de bienestar que acompañan tus rutinas diarias con cuidado, equilibrio y una experiencia sensorial que invita a la calma. Cada producto nace del compromiso con la naturaleza, la calidad y el bienestar real de las personas.
-      </p>
-    </div>
-    <div class="qs-mv-item">
-      <div class="qs-mv-icon"><span class="svg-wrapper">{{- 'icon-ti-eye.svg' | inline_asset_content -}}</span></div>
-      <p class="qs-label">Visión</p>
-      <h3 class="qs-mv-title">Hacia dónde vamos</h3>
-      <p class="qs-mv-text">
-        Ser la marca colombiana de referencia en bienestar con lavanda, reconocida por la calidad de sus productos, su compromiso con lo natural y su capacidad de transformar los pequeños momentos cotidianos en rituales de autocuidado consciente.
-      </p>
-    </div>
-  </div>
-
-  <div class="qs-historia">
+  <div class="qs-historia color-{{ section.settings.historia_color_scheme }} gradient">
     <p class="qs-label">Nuestra historia</p>
     <h2 class="qs-historia-title">Todo empieza con una planta</h2>
     <p class="qs-historia-text">
@@ -511,7 +497,7 @@
     </div>
   </div>
 
-  <div class="qs-cta">
+  <div class="qs-cta color-{{ section.settings.cta_color_scheme }} gradient">
     <h2 class="qs-cta-title">¿Lista para vivir en calma?</h2>
     <p class="qs-cta-text">Explora nuestra colección de productos inspirados en la lavanda y empieza tu ritual de bienestar hoy.</p>
     <div class="qs-cta-btns">
@@ -534,13 +520,31 @@
       "type": "color_scheme",
       "id": "hero_color_scheme",
       "label": "Esquema de color del banner inicial",
-      "default": "scheme-lilac"
+      "default": "scheme-4"
+    },
+    {
+      "type": "color_scheme",
+      "id": "intro_color_scheme",
+      "label": "Esquema de color de Quiénes somos / Misión / Visión",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "historia_color_scheme",
+      "label": "Esquema de color de Nuestra historia",
+      "default": "scheme-4"
     },
     {
       "type": "color_scheme",
       "id": "certs_color_scheme",
       "label": "Esquema de color de la franja de certificaciones",
       "default": "scheme-4"
+    },
+    {
+      "type": "color_scheme",
+      "id": "cta_color_scheme",
+      "label": "Esquema de color del CTA final",
+      "default": "scheme-lilac"
     }
   ],
   "presets": [
