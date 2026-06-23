@@ -1,0 +1,541 @@
+{%- style -%}
+  .qs {
+    font-family: 'Jost', sans-serif;
+    background: var(--purpura-bg);
+    width: 100%;
+  }
+
+  .qs-hero {
+    background: #3d1a5e;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  .qs-hero-label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--purpura-secondary);
+    margin-bottom: 12px;
+  }
+  .qs-hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0 1rem;
+    line-height: 1.1;
+  }
+  .qs-hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: rgba(219, 138, 255, 0.85);
+    font-style: italic;
+    margin: 0;
+  }
+
+  .qs-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 0.5px solid var(--purpura-border);
+  }
+  .qs-intro-img {
+    background: #ede0f7;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qs-intro-img-inner {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #c9a6e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qs-intro-img-inner .svg-wrapper {
+    width: 48px;
+    height: 48px;
+    color: var(--purpura-primary);
+  }
+  .qs-intro-body {
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .qs-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purpura-accent);
+    margin-bottom: 8px;
+  }
+  .qs-intro-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--purpura-text);
+    font-weight: 400;
+    margin: 0 0 1.25rem;
+    line-height: 1.2;
+  }
+  .qs-intro-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.85;
+    margin: 0;
+  }
+
+  .qs-mv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--purpura-bg-secondary);
+    border-bottom: 0.5px solid var(--purpura-border);
+  }
+  .qs-mv-item {
+    padding: 2.5rem;
+  }
+  .qs-mv-item:first-child {
+    border-right: 0.5px solid var(--purpura-border);
+  }
+  .qs-mv-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border: 0.5px solid var(--purpura-border);
+  }
+  .qs-mv-icon .svg-wrapper {
+    width: 18px;
+    height: 18px;
+    color: var(--purpura-primary);
+  }
+  .qs-mv-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--purpura-text);
+    font-weight: 400;
+    margin: 0 0 12px;
+  }
+  .qs-mv-text {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+    margin: 0;
+  }
+
+  .qs-historia {
+    padding: 3.5rem 2rem;
+    border-bottom: 0.5px solid var(--purpura-border);
+    text-align: center;
+  }
+  .qs-historia-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    color: var(--purpura-text);
+    font-weight: 400;
+    margin: 0 0 1.5rem;
+  }
+  .qs-historia-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.9;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .qs-valores {
+    padding: 3rem 2rem;
+    border-bottom: 0.5px solid var(--purpura-border);
+  }
+  .qs-section-label,
+  .qs-section-title {
+    text-align: center;
+  }
+  .qs-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--purpura-text);
+    font-weight: 400;
+    margin: 0 0 2rem;
+  }
+  .qs-valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .qs-valor-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 0.5px solid var(--purpura-border);
+    padding: 1.5rem;
+  }
+  .qs-valor-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--purpura-bg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .qs-valor-icon .svg-wrapper {
+    width: 16px;
+    height: 16px;
+    color: var(--purpura-primary);
+  }
+  .qs-valor-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--purpura-text);
+    margin: 0 0 6px;
+  }
+  .qs-valor-text {
+    font-size: 12px;
+    color: var(--purpura-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .qs-certs {
+    background: #2c2c2c;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    border-bottom: 0.5px solid #3d3d3d;
+  }
+  .qs-cert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .qs-cert-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(219, 138, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qs-cert-icon .svg-wrapper {
+    width: 18px;
+    height: 18px;
+    color: var(--purpura-secondary);
+  }
+  .qs-cert-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    max-width: 72px;
+    line-height: 1.4;
+  }
+
+  .qs-equipo {
+    padding: 3.5rem 2rem;
+    background: var(--purpura-bg);
+    border-bottom: 0.5px solid var(--purpura-border);
+  }
+  .qs-equipo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .qs-equipo-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 0.5px solid var(--purpura-border);
+    padding: 1.5rem;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .qs-equipo-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #ede0f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .qs-equipo-avatar span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--purpura-primary);
+  }
+  .qs-equipo-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--purpura-text);
+    margin: 0 0 3px;
+  }
+  .qs-equipo-role {
+    font-size: 11px;
+    color: var(--purpura-accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+  }
+  .qs-equipo-desc {
+    font-size: 12px;
+    color: var(--purpura-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .qs-cta {
+    background: var(--purpura-primary);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .qs-cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 400;
+    margin: 0 0 8px;
+  }
+  .qs-cta-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 1.5rem;
+  }
+  .qs-cta-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .qs-btn-w,
+  .qs-btn-o {
+    border-radius: 30px;
+    padding: 11px 28px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .qs-btn-w {
+    background: #fff;
+    color: var(--purpura-primary);
+    border: none;
+  }
+  .qs-btn-o {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  @media screen and (max-width: 749px) {
+    .qs-hero-title {
+      font-size: 36px;
+    }
+    .qs-intro,
+    .qs-mv,
+    .qs-valores-grid,
+    .qs-equipo-grid {
+      grid-template-columns: 1fr;
+    }
+    .qs-mv-item:first-child {
+      border-right: none;
+      border-bottom: 0.5px solid var(--purpura-border);
+    }
+  }
+{%- endstyle -%}
+
+<div class="qs">
+  <div class="qs-hero">
+    <p class="qs-hero-label">Nuestra historia</p>
+    <h1 class="qs-hero-title">El arte de vivir<br>en calma</h1>
+    <p class="qs-hero-tagline">Una marca colombiana nacida de la lavanda y el propósito</p>
+  </div>
+
+  <div class="qs-intro">
+    <div class="qs-intro-img">
+      <div class="qs-intro-img-inner">
+        <span class="svg-wrapper">{{- 'icon-ti-plant-2.svg' | inline_asset_content -}}</span>
+      </div>
+    </div>
+    <div class="qs-intro-body">
+      <p class="qs-label">Quiénes somos</p>
+      <h2 class="qs-intro-title">Transformamos la esencia de la lavanda en bienestar real</h2>
+      <p class="qs-intro-text">
+        PÚRPURA&amp;Co. nació de una convicción simple: la lavanda tiene el poder de transformar cómo te sientes, cómo luce tu piel y cómo se siente tu hogar. Somos una marca colombiana artesanal que combina tradición e innovación para llevar los beneficios de esta planta milenaria a tu vida diaria — en forma de cosméticos, aromaterapia, ambientación y plantas vivas. Todo lo que hacemos está libre de parabenos, dermatológicamente aprobado y hecho con intención.
+      </p>
+    </div>
+  </div>
+
+  <div class="qs-mv">
+    <div class="qs-mv-item">
+      <div class="qs-mv-icon"><span class="svg-wrapper">{{- 'icon-ti-target.svg' | inline_asset_content -}}</span></div>
+      <p class="qs-label">Misión</p>
+      <h3 class="qs-mv-title">Lo que nos mueve cada día</h3>
+      <p class="qs-mv-text">
+        Transformar la esencia de la lavanda en productos de bienestar que acompañan tus rutinas diarias con cuidado, equilibrio y una experiencia sensorial que invita a la calma. Cada producto nace del compromiso con la naturaleza, la calidad y el bienestar real de las personas.
+      </p>
+    </div>
+    <div class="qs-mv-item">
+      <div class="qs-mv-icon"><span class="svg-wrapper">{{- 'icon-ti-eye.svg' | inline_asset_content -}}</span></div>
+      <p class="qs-label">Visión</p>
+      <h3 class="qs-mv-title">Hacia dónde vamos</h3>
+      <p class="qs-mv-text">
+        Ser la marca colombiana de referencia en bienestar con lavanda, reconocida por la calidad de sus productos, su compromiso con lo natural y su capacidad de transformar los pequeños momentos cotidianos en rituales de autocuidado consciente.
+      </p>
+    </div>
+  </div>
+
+  <div class="qs-historia">
+    <p class="qs-label">Nuestra historia</p>
+    <h2 class="qs-historia-title">Todo empieza con una planta</h2>
+    <p class="qs-historia-text">
+      PÚRPURA&amp;Co. nació en Bogotá de la mano de quienes creyeron que el bienestar podía ser algo cotidiano, accesible y hermoso. Inspirados en las propiedades terapéuticas de la lavanda — su capacidad de calmar, sanar y transformar ambientes — comenzamos a crear productos que combinan lo mejor de la naturaleza con fórmulas de alta calidad. Hoy somos una comunidad apasionada por el autocuidado consciente, el diseño con intención y el apoyo al talento artesanal colombiano.
+    </p>
+  </div>
+
+  <div class="qs-valores">
+    <p class="qs-label qs-section-label">Lo que nos define</p>
+    <h2 class="qs-section-title">Nuestros valores</h2>
+    <div class="qs-valores-grid">
+      <div class="qs-valor-card">
+        <div class="qs-valor-icon"><span class="svg-wrapper">{{- 'icon-ti-leaf.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-valor-name">Natural con propósito</p>
+        <p class="qs-valor-text">Formulamos con ingredientes naturales de alta calidad, libres de parabenos y seguros para todo tipo de piel.</p>
+      </div>
+      <div class="qs-valor-card">
+        <div class="qs-valor-icon"><span class="svg-wrapper">{{- 'icon-ti-heart.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-valor-name">Hecho con intención</p>
+        <p class="qs-valor-text">Cada producto es pensado para que la rutina diaria se convierta en un momento de cuidado consciente y bienestar real.</p>
+      </div>
+      <div class="qs-valor-card">
+        <div class="qs-valor-icon"><span class="svg-wrapper">{{- 'icon-ti-map-pin.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-valor-name">Orgullo colombiano</p>
+        <p class="qs-valor-text">Apoyamos el talento local. Nuestras velas canoa son talladas por artesanos del Chocó, nuestras canastas por artesanas colombianas.</p>
+      </div>
+      <div class="qs-valor-card">
+        <div class="qs-valor-icon"><span class="svg-wrapper">{{- 'icon-ti-certificate.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-valor-name">Calidad garantizada</p>
+        <p class="qs-valor-text">Todos nuestros cosméticos cuentan con registro Invima vigente y han sido dermatológicamente aprobados.</p>
+      </div>
+      <div class="qs-valor-card">
+        <div class="qs-valor-icon"><span class="svg-wrapper">{{- 'icon-ti-recycle.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-valor-name">Compromiso ambiental</p>
+        <p class="qs-valor-text">Empaques reciclables, fórmulas veganas y sin testeo en animales. Cuidamos tu piel sin dañar el planeta.</p>
+      </div>
+      <div class="qs-valor-card">
+        <div class="qs-valor-icon"><span class="svg-wrapper">{{- 'icon-ti-sparkles.svg' | inline_asset_content -}}</span></div>
+        <p class="qs-valor-name">Experiencia sensorial</p>
+        <p class="qs-valor-text">Cada aroma, textura y presentación está pensada para que el producto sea una experiencia, no solo un resultado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-certs">
+    <div class="qs-cert">
+      <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-paw.svg' | inline_asset_content -}}</span></div>
+      <span class="qs-cert-label">No testado en animales</span>
+    </div>
+    <div class="qs-cert">
+      <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-leaf.svg' | inline_asset_content -}}</span></div>
+      <span class="qs-cert-label">100% vegano</span>
+    </div>
+    <div class="qs-cert">
+      <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-shield-check.svg' | inline_asset_content -}}</span></div>
+      <span class="qs-cert-label">Sin parabenos</span>
+    </div>
+    <div class="qs-cert">
+      <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-map-pin.svg' | inline_asset_content -}}</span></div>
+      <span class="qs-cert-label">Producto colombiano</span>
+    </div>
+    <div class="qs-cert">
+      <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-recycle.svg' | inline_asset_content -}}</span></div>
+      <span class="qs-cert-label">Reciclable</span>
+    </div>
+    <div class="qs-cert">
+      <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-clock.svg' | inline_asset_content -}}</span></div>
+      <span class="qs-cert-label">12M apertura</span>
+    </div>
+  </div>
+
+  <div class="qs-equipo">
+    <p class="qs-label qs-section-label">Las personas detrás</p>
+    <h2 class="qs-section-title">Equipo PÚRPURA&amp;Co.</h2>
+    <div class="qs-equipo-grid">
+      <div class="qs-equipo-card">
+        <div class="qs-equipo-avatar"><span>F</span></div>
+        <div>
+          <p class="qs-equipo-name">Fundadora</p>
+          <p class="qs-equipo-role">Dirección creativa y de marca</p>
+          <p class="qs-equipo-desc">Apasionada por el bienestar, el diseño con intención y el poder transformador de la lavanda. Creó PÚRPURA&amp;Co. para que el autocuidado fuera accesible y hermoso.</p>
+        </div>
+      </div>
+      <div class="qs-equipo-card">
+        <div class="qs-equipo-avatar"><span>A</span></div>
+        <div>
+          <p class="qs-equipo-name">Artesanos del Chocó</p>
+          <p class="qs-equipo-role">Velas canoa</p>
+          <p class="qs-equipo-desc">Tallan a mano cada canoa en madera de granadillo y Oquendo. Su trabajo artesanal es parte esencial del alma de la marca.</p>
+        </div>
+      </div>
+      <div class="qs-equipo-card">
+        <div class="qs-equipo-avatar"><span>C</span></div>
+        <div>
+          <p class="qs-equipo-name">Artesanas colombianas</p>
+          <p class="qs-equipo-role">Canastas Kit Junco</p>
+          <p class="qs-equipo-desc">Tejen a mano las canastas del Kit Junco, llevando el talento artesanal colombiano a cada regalo especial.</p>
+        </div>
+      </div>
+      <div class="qs-equipo-card">
+        <div class="qs-equipo-avatar"><span>L</span></div>
+        <div>
+          <p class="qs-equipo-name">Lavanda Garden SAS</p>
+          <p class="qs-equipo-role">NIT 901.129.770-7 · Bogotá</p>
+          <p class="qs-equipo-desc">La empresa detrás de PÚRPURA&amp;Co. Comprometida con los más altos estándares de calidad, seguridad y bienestar para cada cliente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qs-cta">
+    <h2 class="qs-cta-title">¿Lista para vivir en calma?</h2>
+    <p class="qs-cta-text">Explora nuestra colección de productos inspirados en la lavanda y empieza tu ritual de bienestar hoy.</p>
+    <div class="qs-cta-btns">
+      <a href="{{ routes.all_products_collection_url }}" class="qs-btn-w">Ver todos los productos</a>
+      <a href="{{ pages.contacto.url | default: '/pages/contacto' }}" class="qs-btn-o">Contáctanos</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Quiénes somos",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "presets": [
+    {
+      "name": "Quiénes somos"
+    }
+  ]
+}
+{% endschema %}
