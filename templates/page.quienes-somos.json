@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -10,8 +19,18 @@
     },
     "about_us": {
       "type": "about-us",
-      "settings": {}
+      "settings": {
+        "founders_image": "shopify://shop_images/WhatsApp_Image_2026-06-12_at_12.47.17_PM.jpg",
+        "hero_color_scheme": "",
+        "intro_color_scheme": "",
+        "historia_color_scheme": "",
+        "certs_color_scheme": "",
+        "cta_color_scheme": ""
+      }
     }
   },
-  "order": ["main", "about_us"]
+  "order": [
+    "main",
+    "about_us"
+  ]
 }
