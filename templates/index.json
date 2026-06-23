@@ -173,7 +173,7 @@
       "type": "featured-collection",
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
-        "collection": "mas-vendidos",
+        "collection": "todos-los-productos",
         "products_to_show": 4,
         "title": "Los más vendidos",
         "heading_size": "h2",
