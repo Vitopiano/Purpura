@@ -344,13 +344,13 @@
 {%- endstyle -%}
 
 <div class="qs">
-  <div class="qs-hero color-{{ section.settings.hero_color_scheme }} gradient">
+  <div class="qs-hero color-{{ section.settings.hero_color_scheme | default: 'scheme-4' }} gradient">
     <p class="qs-hero-label">Nuestra historia</p>
     <h1 class="qs-hero-title">El arte de vivir en calma</h1>
     <p class="qs-hero-tagline">Una marca colombiana nacida de la lavanda y el propósito</p>
   </div>
 
-  <div class="qs-intro color-{{ section.settings.intro_color_scheme }} gradient">
+  <div class="qs-intro color-{{ section.settings.intro_color_scheme | default: 'scheme-1' }} gradient">
     <div class="qs-intro-img">
       {%- if section.settings.founders_image != blank -%}
         {{
@@ -397,7 +397,7 @@
     </div>
   </div>
 
-  <div class="qs-historia color-{{ section.settings.historia_color_scheme }} gradient">
+  <div class="qs-historia color-{{ section.settings.historia_color_scheme | default: 'scheme-4' }} gradient">
     <p class="qs-label">Nuestra historia</p>
     <h2 class="qs-historia-title">Todo empieza con una planta</h2>
     <p class="qs-historia-text">
@@ -442,7 +442,7 @@
     </div>
   </div>
 
-  <div class="qs-certs color-{{ section.settings.certs_color_scheme }} gradient">
+  <div class="qs-certs color-{{ section.settings.certs_color_scheme | default: 'scheme-4' }} gradient">
     <div class="qs-cert">
       <div class="qs-cert-icon"><span class="svg-wrapper">{{- 'icon-ti-paw.svg' | inline_asset_content -}}</span></div>
       <span class="qs-cert-label">No testado en animales</span>
@@ -508,7 +508,7 @@
     </div>
   </div>
 
-  <div class="qs-cta color-{{ section.settings.cta_color_scheme }} gradient">
+  <div class="qs-cta color-{{ section.settings.cta_color_scheme | default: 'scheme-lilac' }} gradient">
     <h2 class="qs-cta-title">¿Lista para vivir en calma?</h2>
     <p class="qs-cta-text">Explora nuestra colección de productos inspirados en la lavanda y empieza tu ritual de bienestar hoy.</p>
     <div class="qs-cta-btns">

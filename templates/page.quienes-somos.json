@@ -21,11 +21,11 @@
       "type": "about-us",
       "settings": {
         "founders_image": "shopify://shop_images/WhatsApp_Image_2026-06-12_at_12.47.17_PM.jpg",
-        "hero_color_scheme": "",
-        "intro_color_scheme": "",
-        "historia_color_scheme": "",
-        "certs_color_scheme": "",
-        "cta_color_scheme": ""
+        "hero_color_scheme": "scheme-4",
+        "intro_color_scheme": "scheme-1",
+        "historia_color_scheme": "scheme-4",
+        "certs_color_scheme": "scheme-4",
+        "cta_color_scheme": "scheme-lilac"
       }
     }
   },
