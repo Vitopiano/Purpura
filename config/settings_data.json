@@ -9,6 +9,7 @@
  */
 {
   "current": {
+    "logo": "shopify://shop_images/Captura_de_pantalla_2026-06-12_220718.png",
     "logo_width": 80,
     "favicon": "shopify://shop_images/Captura_de_pantalla_2026-06-12_220646.png",
     "type_header_font": "lora_n4",
@@ -213,7 +214,7 @@
         "settings": {
           "background": "#584166",
           "background_gradient": "",
-          "text": "#FAF8F5",
+          "text": "#faf8f5",
           "button": "#faf8f5",
           "button_label": "#6d4580",
           "secondary_button_label": "#faf8f5",
