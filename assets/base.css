@@ -3653,11 +3653,11 @@ body {
   --alpha-button-background: 0;
 }
 
-/* Prices in Cormorant Garamond, brand purple — wins over component-price.css regardless of load order */
+/* Prices in brand purple — wins over component-price.css regardless of load order */
 .price .price-item,
 .price-item--regular,
 .price-item--sale {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--purpura-primary);
   font-size: 1.8rem;
   letter-spacing: 0.02rem;

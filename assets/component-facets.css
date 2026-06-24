@@ -1261,7 +1261,7 @@ input.mobile-facets__checkbox {
 .facets__heading--vertical,
 .facet-filters__label {
   color: var(--purpura-text);
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-size: 1.1rem;
@@ -1293,7 +1293,7 @@ input.mobile-facets__checkbox {
   color: var(--purpura-primary);
   box-shadow: 0 0 0 0.1rem var(--purpura-primary);
   border-radius: 2.4rem;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .active-facets__button--light .active-facets__button-inner {

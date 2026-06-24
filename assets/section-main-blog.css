@@ -7,7 +7,7 @@
 }
 
 .blog-hero__label {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -16,7 +16,7 @@
 }
 
 .blog-hero__title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 3.2rem;
   font-weight: 400;
   color: var(--purpura-text);
@@ -24,7 +24,7 @@
 }
 
 .blog-hero__description {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   color: var(--purpura-text-secondary);
   line-height: 1.7;
@@ -45,7 +45,7 @@
   border: 0.05rem solid var(--purpura-border);
   border-radius: 2.4rem;
   padding: 0.7rem 1.8rem;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.02em;
   color: var(--purpura-text-secondary);
@@ -99,7 +99,7 @@
   display: inline-block;
   background: var(--purpura-primary);
   color: #ffffff;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -110,7 +110,7 @@
 }
 
 .blog-featured__title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   font-weight: 400;
   line-height: 1.2;
@@ -122,14 +122,14 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   color: var(--purpura-accent);
   margin-bottom: 1.25rem;
 }
 
 .blog-featured__excerpt {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   color: var(--purpura-text-secondary);
   line-height: 1.7;
@@ -140,7 +140,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -151,7 +151,7 @@
 }
 
 .blog-grid-heading__label {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -160,7 +160,7 @@
 }
 
 .blog-grid-heading__title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   font-weight: 400;
   color: var(--purpura-text);
