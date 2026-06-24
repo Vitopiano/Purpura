@@ -32,6 +32,10 @@
     display: none;
   }
 
+  #Banner-{{ section.id }} .banner__box {
+    background-color: rgba(var(--color-background), 0.6);
+  }
+
   {%- if section.settings.image == blank and section.settings.image_2 == blank -%}
     #Banner-{{ section.id }} .banner__box {
       background: transparent;

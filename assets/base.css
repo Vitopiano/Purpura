@@ -2801,11 +2801,15 @@ details[open] > .header__submenu {
   color: rgb(var(--color-foreground));
 }
 
-.header__menu-item span {
+.header__menu-item span,
+.header__menu-item > a {
   transition: text-decoration var(--duration-short) ease;
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.header__menu-item:hover span {
+.header__menu-item:hover span,
+.header__menu-item:hover > a {
   text-decoration: underline;
   text-underline-offset: 0.3rem;
 }
@@ -3609,10 +3613,10 @@ details-disclosure > details {
   --purpura-accent: #9b72aa;
   --purpura-border: #e8ddef;
 
-  --font-heading-family: 'Cormorant Garamond', serif;
+  --font-heading-family: 'Montserrat', sans-serif;
   --font-heading-style: normal;
-  --font-heading-weight: 400;
-  --font-body-family: 'Jost', sans-serif;
+  --font-heading-weight: 500;
+  --font-body-family: 'Montserrat', sans-serif;
   --font-body-style: normal;
   --font-body-weight: 400;
 
