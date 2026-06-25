@@ -55,6 +55,15 @@
       flex-grow: 0;
       min-width: 0;
     }
+
+    #Banner-{{ section.id }} .banner__box {
+      max-width: 95vw;
+    }
+
+    #Banner-{{ section.id }} .banner__heading {
+      white-space: nowrap;
+      font-size: 2.4rem;
+    }
   }
 
   {%- if section.settings.image == blank and section.settings.image_2 == blank -%}
