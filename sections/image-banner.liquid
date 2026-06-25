@@ -33,16 +33,7 @@
   }
 
   #Banner-{{ section.id }} .banner__box {
-    background-color: transparent;
-    isolation: isolate;
-  }
-
-  #Banner-{{ section.id }} .banner__box::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
+    transform: none;
     background-color: rgba(var(--color-background), 0.55);
     border: 1px solid rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(20px) saturate(180%);
