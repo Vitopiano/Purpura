@@ -85,13 +85,13 @@
       "settings": {
         "color_scheme": "scheme-1",
         "delay_seconds": 5,
-        "eyebrow": "Únete y recibe",
-        "heading": "un 10% de descuento en tu primera compra",
-        "text": "Suscríbete con tu nombre y correo y recibe tu código de descuento al instante.",
-        "button_label": "Recibir mi descuento",
+        "eyebrow": "Únete a la",
+        "heading": "Comunidad Púrpura",
+        "text": "Sé parte de nuestra comunidad: recibe primero los lanzamientos, rituales exclusivos y un 10% de descuento en tu primera compra.",
+        "button_label": "Unirme a la comunidad",
         "discount_code": "BIENVENIDA10",
-        "success_heading": "¡Gracias por unirte!",
-        "success_text": "Usa este código en tu próxima compra:"
+        "success_heading": "¡Bienvenida a la Comunidad Púrpura!",
+        "success_text": "Ya eres parte. Usa este código en tu próxima compra:"
       }
     }
   },
