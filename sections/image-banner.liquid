@@ -32,8 +32,14 @@
     display: none;
   }
 
+  #Banner-{{ section.id }} .banner__content,
   #Banner-{{ section.id }} .banner__box {
-    transform: none;
+    transform: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  #Banner-{{ section.id }} .banner__box {
     background-color: rgba(var(--color-background), 0.85);
     border: 1px solid rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(50px) saturate(100%);
