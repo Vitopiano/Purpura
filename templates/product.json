@@ -31,6 +31,10 @@
             "swatch_shape": "none"
           }
         },
+        "presentation_picker_a6yxqw": {
+          "type": "presentation_picker",
+          "settings": {}
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -106,6 +110,7 @@
         "price",
         "rating_rYTLYX",
         "variant_picker",
+        "presentation_picker_a6yxqw",
         "quantity_selector",
         "buy_buttons",
         "icon_with_text_trust",
