@@ -113,36 +113,15 @@
       }
 
       .product .product-form__submit {
-        position: relative;
-        overflow: hidden;
-        background-color: #ffffff;
-        border: 1px solid var(--purpura-primary);
-        color: var(--purpura-primary);
-        transition: color 0.35s ease;
-        z-index: 0;
-      }
-
-      .product .product-form__submit::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-color: var(--purpura-primary);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.35s ease;
+        --color-button: 255, 255, 255;
+        --color-button-text: 109, 69, 128;
+        --alpha-button-background: 1;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
       .product .product-form__submit:hover {
-        color: #ffffff;
-      }
-
-      .product .product-form__submit:hover::before {
-        transform: scaleX(1);
-      }
-
-      .product .product-form__submit > span {
-        position: relative;
-        z-index: 1;
+        --color-button: 109, 69, 128;
+        --color-button-text: 255, 255, 255;
       }
 
       .product-form__wishlist-toggle {
