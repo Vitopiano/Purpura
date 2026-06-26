@@ -125,11 +125,12 @@
       }
 
       .product .shopify-payment-button__button--unbranded {
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
 
       .product .shopify-payment-button__button--unbranded:hover {
-        --color-button: 92, 58, 110;
+        --color-button: 255, 255, 255;
+        --color-button-text: 109, 69, 128;
       }
     {%- endstyle -%}
   {%- else -%}
