@@ -31,7 +31,7 @@
           "type": "text",
           "settings": {
             "heading": "",
-            "subtext": "<p>MARCA</p><p><a href=\"/pages/quienes-somos\" title=\"Nosotros\">Nuestra historia</a> <a href=\"/blogs/la-lavanda-y-sus-beneficios\" title=\"La lavanda y sus beneficios: todo lo que esta planta puede hacer por ti\">Blog </a><a href=\"/pages/contacto\" title=\"Contacto\">Corporativo </a><a href=\"https://www.purpuraco.com/pages/faq\" title=\"https://www.purpuraco.com/pages/faq\">FAQ </a></p><p><a href=\"/policies/refund-policy\" title=\"Refund Policy\">Políticas reembolso</a></p>"
+            "subtext": "<p>MARCA</p><p><a href=\"/pages/quienes-somos\" title=\"Nosotros\">Nuestra historia</a> <a href=\"/blogs/la-lavanda-y-sus-beneficios\" title=\"La lavanda y sus beneficios: todo lo que esta planta puede hacer por ti\">Blog </a><a href=\"/pages/contacto\" title=\"Contacto\">Corporativo </a><a href=\"https://www.purpuraco.com/pages/faq\" title=\"https://www.purpuraco.com/pages/faq\">FAQ </a></p>"
           }
         },
         "text_contacto": {
