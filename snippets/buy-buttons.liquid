@@ -124,41 +124,14 @@
         --color-button-text: 255, 255, 255;
       }
 
-      .product-form__wishlist-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.6rem;
-        margin-top: 1rem;
+      .product .shopify-payment-button__button--unbranded {
+        transition: background-color 0.3s ease;
       }
 
-      .product-form__wishlist-toggle .wishlist-icon svg {
-        width: 1.5rem;
-        height: 1.5rem;
-        fill: none;
-        stroke: currentColor;
-        stroke-width: 1.5;
-      }
-
-      .product-form__wishlist-toggle.is-saved {
-        background-color: var(--purpura-bg-secondary);
-      }
-
-      .product-form__wishlist-toggle.is-saved .wishlist-icon svg {
-        fill: currentColor;
+      .product .shopify-payment-button__button--unbranded:hover {
+        --color-button: 92, 58, 110;
       }
     {%- endstyle -%}
-
-    <button
-      type="button"
-      class="product-form__wishlist-toggle button button--secondary button--full-width"
-      data-wishlist-toggle
-      data-product-id="{{ product.id }}"
-      aria-pressed="false"
-    >
-      <span class="svg-wrapper wishlist-icon">{{- 'icon-heart.svg' | inline_asset_content -}}</span>
-      <span class="wishlist-label">Guardar en favoritos</span>
-    </button>
   {%- else -%}
     <div class="product-form">
       <div class="product-form__buttons form">
@@ -173,65 +146,6 @@
       </div>
     </div>
   {%- endif -%}
-
-  {% javascript %}
-    (function () {
-      function getWishlist() {
-        try {
-          return JSON.parse(window.localStorage.getItem('purpura-wishlist') || '[]');
-        } catch (e) {
-          return [];
-        }
-      }
-
-      function setWishlist(list) {
-        try {
-          window.localStorage.setItem('purpura-wishlist', JSON.stringify(list));
-        } catch (e) {}
-      }
-
-      function updateButtonState(button, saved) {
-        button.setAttribute('aria-pressed', saved);
-        button.classList.toggle('is-saved', saved);
-        var label = button.querySelector('.wishlist-label');
-        if (label) {
-          label.textContent = saved ? 'Guardado en favoritos' : 'Guardar en favoritos';
-        }
-      }
-
-      function initWishlistButtons() {
-        document.querySelectorAll('[data-wishlist-toggle]').forEach(function (button) {
-          if (button.dataset.wishlistInitialized) return;
-          button.dataset.wishlistInitialized = 'true';
-
-          var productId = button.dataset.productId;
-          var wishlist = getWishlist();
-          updateButtonState(button, wishlist.indexOf(productId) !== -1);
-
-          button.addEventListener('click', function () {
-            var list = getWishlist();
-            var index = list.indexOf(productId);
-            var saved;
-            if (index === -1) {
-              list.push(productId);
-              saved = true;
-            } else {
-              list.splice(index, 1);
-              saved = false;
-            }
-            setWishlist(list);
-            updateButtonState(button, saved);
-          });
-        });
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initWishlistButtons);
-      } else {
-        initWishlistButtons();
-      }
-    })();
-  {% endjavascript %}
 
   {%- if show_pickup_availability -%}
     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
