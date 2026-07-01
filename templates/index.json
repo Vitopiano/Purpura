@@ -43,8 +43,8 @@
         }
       },
       "block_order": [
-        "heading_bWkcxq",
         "text_ybCtRG",
+        "heading_bWkcxq",
         "buttons_bNVNWb"
       ],
       "name": "t:sections.image-banner.presets.name",
